@@ -44,25 +44,25 @@ public class Sql2oPhraseDaoTest {
         phraseDao.add(phrase1);
         assertEquals(1, phraseDao.getAll().size());
     }
-//
-//    @Test
-//    public void addPhraseSetsId() throws Exception {
-//        Phrase phrase1 = setUpAPhrase();
-//        phraseDao.add(phrase1);
-//        int idOfPhrase = phrase1.getId();
-//        assertEquals(1, idOfPhrase);
-//    }
 
-//    @Test
-//    public void getAllLocationsGetsAllLocations_True() {
-//        Location locationTest = setUpLocation();
-//        Location locationTest2 = setUpLocation();
-//        Location locationTest3 = setUpLocation();
-//        locationDao.add(locationTest);
-//        locationDao.add(locationTest2);
-//        locationDao.add(locationTest3);
-//        assertEquals(3, locationDao.getAll().size());
-//    }
+    @Test
+    public void addPhraseSetsId() throws Exception {
+        Phrase phrase1 = setUpAPhrase();
+        phraseDao.add(phrase1);
+        int idOfPhrase = phrase1.getId();
+        assertEquals(1, idOfPhrase);
+    }
+
+    @Test
+    public void getAllPhrasesAddsAPhrase_True() {
+        Phrase test = setUpAPhrase();
+        Phrase test2 = setUpAPhrase();
+        Phrase test3 = setUpAPhrase();
+        phraseDao.add(test);
+        phraseDao.add(test2);
+        phraseDao.add(test3);
+        assertEquals(3, phraseDao.getAll().size());
+    }
 //
 //    @Test
 //    public void getLocationByID_Location() {

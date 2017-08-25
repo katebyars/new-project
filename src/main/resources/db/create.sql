@@ -17,6 +17,7 @@ CREATE TABLE IF NOT EXISTS locations(
 
 CREATE TABLE IF NOT EXISTS phrases (
  id int PRIMARY KEY auto_increment,
+ name VARCHAR,
  phrase VARCHAR,
  definition VARCHAR,
 );

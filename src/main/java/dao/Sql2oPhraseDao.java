@@ -20,7 +20,7 @@ public class Sql2oPhraseDao implements PhraseDao {
 
     @Override
     public void add(Phrase phrase) {
-        String sql = "INSERT INTO phrases (phrase, definition) VALUES (:phrase, :definition)";
+        String sql = "INSERT INTO phrases (name, phrase, definition) VALUES (:name, :phrase, :definition)";
         try(Connection con = sql2o.open()){
             int id = (int) con.createQuery(sql)
                     .bind(phrase)
