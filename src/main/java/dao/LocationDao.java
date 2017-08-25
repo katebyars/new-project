@@ -4,10 +4,10 @@ import java.util.List;
 
 public interface LocationDao {
 //    //create
-//    void add(Location location);
+    void add(Location location);
 //
 //    //read
-//    List<Location> getAll();
+    List<Location> getAll();
 //    Location findById(int id);
 //
 //    //update

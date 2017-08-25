@@ -1,4 +1,55 @@
 package dao;
+import models.Location;
+import org.sql2o.Connection;
+import org.sql2o.Sql2o;
+import org.sql2o.Sql2oException;
+import java.util.List;
 
 public class Sql2oLocationDao implements LocationDao {
+
+
+    private final Sql2o sql2o;
+
+    public Sql2oLocationDao(Sql2o sql2o){
+        this.sql2o = sql2o;
+    }
+
+    @Override
+    public void add(Location location) {
+        String sql = "INSERT INTO locations (name, city, region, address) VALUES (:name, :city, :region, :address)";
+        try(Connection con = sql2o.open()){
+            int id = (int) con.createQuery(sql)
+                    .bind(location)
+                    .executeUpdate()
+                    .getKey();
+            location.setId(id);
+        } catch (Sql2oException ex) {
+            System.out.println(ex);
+        }
+
+    }
+
+    @Override
+    public List<Location> getAll() {
+            try(Connection con = sql2o.open()){
+                return con.createQuery("SELECT * FROM locations")
+                        .executeAndFetch(Location.class);
+            }
+
+    }
+//
+//    @Override
+//    public Location findById() {
+//
+//    }
+//
+//    @Override
+//    public void udate(){
+//
+//    }
+//
+//    @Override
+//    public void deleteById() {
+//
+//    }
 }

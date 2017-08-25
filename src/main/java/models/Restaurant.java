@@ -9,7 +9,7 @@ public class Restaurant extends Location {
     private int locationId;
 
     public Restaurant(String name, String city, String region, String address, int id, String name1, String foodIAte, String address1, String description, int locationId) {
-        super(name, city, region, address, id);
+        super(name, city, region, address);
         this.name = name1;
         this.foodIAte = foodIAte;
         this.address = address1;

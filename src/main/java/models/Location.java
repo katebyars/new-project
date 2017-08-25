@@ -8,7 +8,7 @@ public class Location {
     private String address;
     private int id;
 
-    public Location(String name, String city, String region, String address, int id) {
+    public Location(String name, String city, String region, String address) {
         this.name = name;
         City = city;
         Region = region;

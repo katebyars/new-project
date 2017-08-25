@@ -9,7 +9,7 @@ public class Sight extends Location {
 
 
     public Sight(String name, String city, String region, String address, int id, String name1, String address1, String description, int locationId) {
-        super(name, city, region, address, id);
+        super(name, city, region, address);
         this.name = name1;
         this.address = address1;
         this.description = description;

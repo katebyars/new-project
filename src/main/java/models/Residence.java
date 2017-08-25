@@ -7,8 +7,8 @@ public class Residence extends Location {
     private String description;
     private int locationId;
 
-    public Residence(String name, String city, String region, String address, int id, String residenceOwner, String foodIAte, String description, int locationId) {
-        super(name, city, region, address, id);
+    public Residence(String name, String city, String region, String address, String residenceOwner, String foodIAte, String description, int locationId) {
+        super(name, city, region, address);
         this.residenceOwner = residenceOwner;
         this.foodIAte = foodIAte;
         this.description = description;
