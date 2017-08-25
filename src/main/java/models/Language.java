@@ -6,7 +6,7 @@ public class Language {
     private int id;
 
 
-    public Language(String name, int id) {
+    public Language(String name) {
         this.name = name;
         this.id = id;
     }
@@ -17,6 +17,14 @@ public class Language {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     @Override

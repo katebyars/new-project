@@ -8,7 +8,7 @@ public class Word extends Language {
     private String photo;
 
     public Word(String name, int id, String word, String definition, int languageId, String photo) {
-        super(name, id);
+        super(name);
         this.word = word;
         this.definition = definition;
         this.languageId = languageId;
