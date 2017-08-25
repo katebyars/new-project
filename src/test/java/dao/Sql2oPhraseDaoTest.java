@@ -1,6 +1,4 @@
 package dao;
-
-import models.Location;
 import models.Phrase;
 import org.junit.After;
 import org.junit.Before;
@@ -38,15 +36,23 @@ public class Sql2oPhraseDaoTest {
         Phrase phrase = setUpAPhrase();
         assertTrue(phrase instanceof Phrase);
     }
+
+
+    @Test
+    public void addPhraseToDao_True() throws Exception {
+        Phrase phrase1 = setUpAPhrase();
+        phraseDao.add(phrase1);
+        assertEquals(1, phraseDao.getAll().size());
+    }
 //
 //    @Test
-//    public void addLocationSetsId() throws Exception {
-//        Location testLocation = setUpLocation();
-//        locationDao.add(testLocation);
-//        int idOfTest = testLocation.getId();
-//        assertEquals(1, idOfTest);
+//    public void addPhraseSetsId() throws Exception {
+//        Phrase phrase1 = setUpAPhrase();
+//        phraseDao.add(phrase1);
+//        int idOfPhrase = phrase1.getId();
+//        assertEquals(1, idOfPhrase);
 //    }
-//
+
 //    @Test
 //    public void getAllLocationsGetsAllLocations_True() {
 //        Location locationTest = setUpLocation();
