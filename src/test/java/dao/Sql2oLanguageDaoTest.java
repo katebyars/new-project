@@ -83,13 +83,13 @@ public class Sql2oLanguageDaoTest {
         assertEquals(0, languageDao.getAll().size());
     }
 
-//    @Test
-//    public void deleteAllLocations() {
-//        Location location = setUpLocation();
-//        locationDao.add(location);
-//        assertEquals(1, locationDao.getAll().size());
-//        locationDao.deleteAll();
-//        assertEquals(0, locationDao.getAll().size());
-//    }
+    @Test
+    public void deleteAllLanguages() {
+        Language language = setUpLanguage();
+        languageDao.add(language);
+        assertEquals(1, languageDao.getAll().size());
+        languageDao.deleteAll();
+        assertEquals(0, languageDao.getAll().size());
+    }
 
 }
