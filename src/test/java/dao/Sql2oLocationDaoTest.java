@@ -49,7 +49,16 @@ public class Sql2oLocationDaoTest {
         assertEquals(1, idOfTest);
     }
 
-
+    @Test
+    public void getAllLocationsGetsAllLocations_True() {
+        Location locationTest = setUpLocation();
+        Location locationTest2 = setUpLocation();
+        Location locationTest3 = setUpLocation();
+        locationDao.add(locationTest);
+        locationDao.add(locationTest2);
+        locationDao.add(locationTest3);
+        assertEquals(3, locationDao.getAll().size());
+    }
 
 
 }
