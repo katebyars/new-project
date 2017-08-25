@@ -27,7 +27,7 @@ public class Sql2oPhraseDaoTest {
 
     //helper
     public Phrase setUpAPhrase () {
-        return new Phrase ("Turkish", "Gurusuruz", "See you later",1, 1) ;
+        return new Phrase ("Turkish", "Gurusuruz", "See you later") ;
 
     }
 
