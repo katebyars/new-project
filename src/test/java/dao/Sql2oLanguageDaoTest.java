@@ -55,16 +55,16 @@ public class Sql2oLanguageDaoTest {
         languageDao.add(testLanguage3);
         assertEquals(3, languageDao.getAll().size());
     }
-//
-//    @Test
-//    public void getLocationByID_Location() {
-//        Location location = setUpLocation();
-//        Location location1 = new Location("Hello", "Dolly", "I'm so glad to meet you", "Bye");
-//        locationDao.add(location);
-//        locationDao.add(location1);
-//        assertEquals("Hello", locationDao.findById(2).getName());
-//    }
-//
+
+    @Test
+    public void getLanguageByID_Location() {
+        Language language = setUpLanguage();
+        Language language1 = new Language("Sicilian");
+        languageDao.add(language);
+        languageDao.add(language1);
+        assertEquals("Sicilian", languageDao.findById(2).getName());
+    }
+
 //    @Test
 //    public void updateChangesName() {
 //        Location location = setUpLocation();
