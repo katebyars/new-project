@@ -78,5 +78,14 @@ public class Sql2oLocationDaoTest {
         assertEquals("Dionysus", locationDao.findById(1).getName());
     }
 
+    @Test
+    public void deleteLocationFromDao_True() {
+        Location location = setUpLocation();
+        locationDao.add(location);
+        assertEquals(1, locationDao.getAll().size());
+        locationDao.deleteById(1);
+        assertEquals(0, locationDao.getAll().size());
+    }
+
 
 }
