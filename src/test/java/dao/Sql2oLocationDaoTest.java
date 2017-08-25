@@ -36,11 +36,15 @@ public class Sql2oLocationDaoTest {
     @Test
     public void addLocationAddsALocation() throws Exception {
         Location locationTest = setUpLocation();
-        locationDao.add(locationTest);
-        int newLocationId = locationTest.getId();
         assertTrue(locationTest instanceof Location);
     }
 
+    @Test
+    public void locationAddsToDAo_True() throws Exception {
+        Location locationTest= setUpLocation();
+        locationDao.add(locationTest);
+        assertEquals(1, locationDao.getAll().size());
+    }
     @Test
     public void addLocationSetsId() throws Exception {
         Location testLocation = setUpLocation();

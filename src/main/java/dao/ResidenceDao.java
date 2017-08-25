@@ -8,19 +8,19 @@ import java.util.List;
 
 public interface ResidenceDao {
 
-//    //create
-//    void add(Residence residence);
-//    void addResidenceToALocation(Location location, Residence residence);
-//
-//    //read
-//    List<Residence> getAll();
-//    Residence findById(int id);
-//    List<Residence> getAllResidencesByLocation(int id);
-//
-//
-//    //update
-//    void update();
-//
-//    //delete
-//    void deleteById(int id); //see above
+    //create
+    void add(Residence residence);
+
+    //read
+    List<Residence> getAll();
+    Residence findById(int id);
+    List<Residence> getAllResidencesByLocation(int locationId);
+
+
+    //update
+    void update(int id, String name, String city, String region, String address, String owner, String foodiate, String description);
+
+    //delete
+    void deleteById(int id); //see above
+    void deleteAll();
 }
