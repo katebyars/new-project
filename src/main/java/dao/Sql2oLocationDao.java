@@ -76,4 +76,15 @@ public class Sql2oLocationDao implements LocationDao {
         }
 
     }
+
+    @Override
+    public void deleteAll() {
+        String sql = "DELETE from locations";
+        try (Connection con = sql2o.open()) {
+            con.createQuery(sql)
+                    .executeUpdate();
+        } catch (Sql2oException ex){
+            System.out.println(ex);
+        }
+    }
 }

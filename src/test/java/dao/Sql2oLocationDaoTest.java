@@ -87,5 +87,12 @@ public class Sql2oLocationDaoTest {
         assertEquals(0, locationDao.getAll().size());
     }
 
-
+    @Test
+    public void deleteAllLocations() {
+        Location location = setUpLocation();
+        locationDao.add(location);
+        assertEquals(1, locationDao.getAll().size());
+        locationDao.deleteAll();
+        assertEquals(0, locationDao.getAll().size());
+    }
 }
