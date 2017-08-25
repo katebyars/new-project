@@ -15,10 +15,10 @@
 
 | Behavior | Example Input | Example Output |
 | ------------- | ------------- | ------------- |
-
+**Later... associate a location with words and phrases
 ## Images
 
- ![Schema Design](https://github.com/katebyars/new-project/master/src/main/resources/public/images/schema.png)
+ ![Schema Design](https://github.com/katebyars/new-project/blob/master/src/main/resources/public/images/.png)
 ## Technologies Used
 
 Java, Spark, SQL, JSON, GSON, Postman, IntelliJ with Handlebars plugin
