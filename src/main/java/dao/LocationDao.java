@@ -8,7 +8,7 @@ public interface LocationDao {
 //
 //    //read
     List<Location> getAll();
-//    Location findById(int id);
+    Location findById(int id);
 //
 //    //update
 //    void update();

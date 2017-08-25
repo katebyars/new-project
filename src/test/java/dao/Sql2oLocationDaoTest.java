@@ -60,5 +60,14 @@ public class Sql2oLocationDaoTest {
         assertEquals(3, locationDao.getAll().size());
     }
 
+    @Test
+    public void getLocationByID_Location() {
+        Location location = setUpLocation();
+        Location location1 = new Location("Hello", "Dolly", "I'm so glad to meet you", "Bye");
+        locationDao.add(location);
+        locationDao.add(location1);
+        assertEquals("Hello", locationDao.findById(2).getName());
+    }
+
 
 }
