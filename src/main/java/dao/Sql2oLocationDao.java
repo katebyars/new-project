@@ -47,11 +47,22 @@ public class Sql2oLocationDao implements LocationDao {
         }
 
     }
-//
-//    @Override
-//    public void udate(){
-//
-//    }
+
+    @Override
+    public void update(int id, String name, String city, String region, String address){
+        String sql = "UPDATE locations SET name = :name, city = :city, region = :region, address = :address WHERE id=:id";
+        try(Connection con = sql2o.open()){
+            con.createQuery(sql)
+                    .addParameter("name", name)
+                    .addParameter("city", city)
+                    .addParameter("region", region)
+                    .addParameter("address", address)
+                    .addParameter("id", id)
+                    .executeUpdate();
+        } catch (Sql2oException ex) {
+            System.out.println(ex);
+        }
+    }
 //
 //    @Override
 //    public void deleteById() {

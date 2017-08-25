@@ -69,5 +69,14 @@ public class Sql2oLocationDaoTest {
         assertEquals("Hello", locationDao.findById(2).getName());
     }
 
+    @Test
+    public void updateChangesName() {
+        Location location = setUpLocation();
+        locationDao.add(location);
+        assertEquals("Ephesus", locationDao.findById(1).getName());
+        locationDao.update(1, "Dionysus", "Sirince", "Western Turkey", "1234 Easy Street");
+        assertEquals("Dionysus", locationDao.findById(1).getName());
+    }
+
 
 }
