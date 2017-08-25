@@ -66,21 +66,21 @@ public class Sql2oPhraseDaoTest {
 
     @Test
     public void getPhraseById() {
-        Phrase location = setUpAPhrase();
-        Phrase location1 = new Phrase("Italian", "Sono stanca", "I am tired.");
-        phraseDao.add(location);
-        phraseDao.add(location1);
+        Phrase phrase = setUpAPhrase();
+        Phrase phrase1 = new Phrase("Italian", "Sono stanca", "I am tired.");
+        phraseDao.add(phrase);
+        phraseDao.add(phrase1);
         assertEquals("Italian", phraseDao.findById(2).getName());
     }
-//
-//    @Test
-//    public void updateChangesName() {
-//        Location location = setUpLocation();
-//        locationDao.add(location);
-//        assertEquals("Ephesus", locationDao.findById(1).getName());
-//        locationDao.update(1, "Dionysus", "Sirince", "Western Turkey", "1234 Easy Street");
-//        assertEquals("Dionysus", locationDao.findById(1).getName());
-//    }
+
+    @Test
+    public void updateChangesName() {
+        Phrase phrase = setUpAPhrase();
+        phraseDao.add(phrase);
+        assertEquals("Turkish", phraseDao.findById(1).getName());
+        phraseDao.update("Italian", "Ho freddo", "I am cold.", 1);
+        assertEquals("Italian", phraseDao.findById(1).getName());
+    }
 //
 //    @Test
 //    public void deleteLocationFromDao_True() {
