@@ -7,7 +7,7 @@ public class Phrase extends Language {
     private int languageId;
     private int wordId;
 
-    public Phrase(String name, int id, String phrase, String definition, int languageId, int wordId) {
+    public Phrase(String name, String phrase, String definition, int languageId, int wordId) {
         super(name);
         this.phrase = phrase;
         this.definition = definition;
