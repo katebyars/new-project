@@ -73,16 +73,16 @@ public class Sql2oLanguageDaoTest {
         languageDao.update(1, "Italian");
         assertEquals("Italian", languageDao.findById(1).getName());
     }
-//
-//    @Test
-//    public void deleteLocationFromDao_True() {
-//        Location location = setUpLocation();
-//        locationDao.add(location);
-//        assertEquals(1, locationDao.getAll().size());
-//        locationDao.deleteById(1);
-//        assertEquals(0, locationDao.getAll().size());
-//    }
-//
+
+    @Test
+    public void deleteALanguageFromTheDao_True() {
+        Language language = setUpLanguage();
+        languageDao.add(language);
+        assertEquals(1, languageDao.getAll().size());
+        languageDao.deleteById(1);
+        assertEquals(0, languageDao.getAll().size());
+    }
+
 //    @Test
 //    public void deleteAllLocations() {
 //        Location location = setUpLocation();
