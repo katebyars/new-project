@@ -81,23 +81,23 @@ public class Sql2oPhraseDaoTest {
         phraseDao.update("Italian", "Ho freddo", "I am cold.", 1);
         assertEquals("Italian", phraseDao.findById(1).getName());
     }
-//
-//    @Test
-//    public void deleteLocationFromDao_True() {
-//        Location location = setUpLocation();
-//        locationDao.add(location);
-//        assertEquals(1, locationDao.getAll().size());
-//        locationDao.deleteById(1);
-//        assertEquals(0, locationDao.getAll().size());
-//    }
-//
-//    @Test
-//    public void deleteAllLocations() {
-//        Location location = setUpLocation();
-//        locationDao.add(location);
-//        assertEquals(1, locationDao.getAll().size());
-//        locationDao.deleteAll();
-//        assertEquals(0, locationDao.getAll().size());
-//    }
+
+    @Test
+    public void deleteLocationFromDao_True() {
+        Phrase phrase = setUpAPhrase();
+        phraseDao.add(phrase);
+        assertEquals(1, phraseDao.getAll().size());
+        phraseDao.deleteById(1);
+        assertEquals(0, phraseDao.getAll().size());
+    }
+
+    @Test
+    public void deleteAllLocations() {
+        Phrase phrase = setUpAPhrase();
+        phraseDao.add(phrase);
+        assertEquals(1, phraseDao.getAll().size());
+        phraseDao.deleteAll();
+        assertEquals(0, phraseDao.getAll().size());
+    }
 
 }
