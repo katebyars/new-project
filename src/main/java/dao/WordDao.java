@@ -6,8 +6,8 @@ import models.Word;
 import java.util.List;
 
 public interface WordDao {
-//    //create
-//    void add(Word word);
+    //create
+    void add(Word word);
 //
 //    //read
 //    List<Word> getAll();
