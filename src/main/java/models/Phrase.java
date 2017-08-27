@@ -4,11 +4,19 @@ public class Phrase extends Language {
     private String phrase;
     private String definition;
 
+    public Phrase (String name, String phrase) {
+        super(name);
+        this.phrase = phrase;
+        this.definition = definition;
+    }
+
     public Phrase(String name, String phrase, String definition) {
         super(name);
         this.phrase = phrase;
         this.definition = definition;
     }
+
+
 
     public String getPhrase() {
         return phrase;
