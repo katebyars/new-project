@@ -14,10 +14,8 @@ CREATE TABLE IF NOT EXISTS phrases (
 );
 
 
---CREATE TABLE IF NOT EXISTS words (
--- id int PRIMARY KEY auto_increment,
--- word VARCHAR,
--- definition VARCHAR,
--- photo VARCHAR,
--- languageid INTEGER
--- );
+CREATE TABLE IF NOT EXISTS words (
+ id int PRIMARY KEY auto_increment,
+ word VARCHAR,
+ definition VARCHAR,
+ );

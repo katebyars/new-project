@@ -1,11 +1,8 @@
 package dao;
-import models.Language;
-import models.Phrase;
 import models.Word;
 import org.sql2o.Connection;
 import org.sql2o.Sql2o;
 import org.sql2o.Sql2oException;
-
 import java.util.List;
 
 public class Sql2oWordDao implements WordDao {
@@ -18,7 +15,7 @@ public class Sql2oWordDao implements WordDao {
 
     @Override
     public void add(Word word) {
-        String sql = "INSERT INTO words (name, word) VALUES (:name, :word)";
+        String sql = "INSERT INTO words (word, definition) VALUES (:word, :definition)";
         try (Connection con = sql2o.open()) {
             int id = (int) con.createQuery(sql)
                     .bind(word)
@@ -28,26 +25,26 @@ public class Sql2oWordDao implements WordDao {
         } catch (Sql2oException ex) {
             System.out.println(ex);
         }
+    }
 
-//
-//    @Override
-//    public List<Word> getAll() {
-//        try(Connection con = sql2o.open()){
-//            return con.createQuery("SELECT * FROM words")
-//                    .executeAndFetch(Word.class);
-//        }
-//
-//    }
-//
-//    @Override
-//    public Word findById(int id) {
-//        try (Connection con = sql2o.open()){
-//            return con.createQuery("SELECT * FROM words WHERE id = :id")
-//                    .addParameter("id", id)
-//                    .executeAndFetchFirst(Word.class);
-//        }
-//
-//    }
+    @Override
+    public List<Word> getAll() {
+        try(Connection con = sql2o.open()){
+            return con.createQuery("SELECT * FROM words")
+                    .executeAndFetch(Word.class);
+        }
+
+    }
+
+    @Override
+    public Word findById(int id) {
+        try (Connection con = sql2o.open()){
+            return con.createQuery("SELECT * FROM words WHERE id = :id")
+                    .addParameter("id", id)
+                    .executeAndFetchFirst(Word.class);
+        }
+
+    }
 //
 //    @Override
 //    public void update(String name, String word, String definition, int id){
@@ -87,5 +84,4 @@ public class Sql2oWordDao implements WordDao {
 //            System.out.println(ex);
 //        }
 //    }
-    }
 }

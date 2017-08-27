@@ -40,32 +40,32 @@ public class Sql2oWordDaoTest {
         assertTrue(word instanceof  Word);
     }
 
-//
-//    @Test
-//    public void addWordToDao_True() throws Exception {
-//        Word word = setUpAWord();
-//        wordDao.add(word);
-//        assertEquals(1, wordDao.getAll().size());
-//    }
-//
-//    @Test
-//    public void addWordSetsID() throws Exception {
-//        Word word = setUpAWord();
-//        wordDao.add(word);
-//        int idOfWord = word.getId();
-//        assertEquals(1, idOfWord);
-//    }
-//
-//    @Test
-//    public void getAllWords() {
-//        Word word = setUpAWord();
-//        Word word2 = setUpAWord();
-//        Word word3 = setUpAWord();
-//        wordDao.add(word);
-//        wordDao.add(word2);
-//        wordDao.add(word3);
-//        assertEquals(3, wordDao.getAll().size());
-//    }
+
+    @Test
+    public void addWordToDao_True() throws Exception {
+        Word word = setUpAWord();
+        wordDao.add(word);
+        assertEquals(1, wordDao.getAll().size());
+    }
+
+    @Test
+    public void addWordSetsID() throws Exception {
+        Word word = setUpAWord();
+        wordDao.add(word);
+        int idOfWord = word.getId();
+        assertEquals(1, idOfWord);
+    }
+
+    @Test
+    public void getAllWords() {
+        Word word = setUpAWord();
+        Word word2 = setUpAWord();
+        Word word3 = setUpAWord();
+        wordDao.add(word);
+        wordDao.add(word2);
+        wordDao.add(word3);
+        assertEquals(3, wordDao.getAll().size());
+    }
 //
 //    @Test
 //    public void getWordById() {

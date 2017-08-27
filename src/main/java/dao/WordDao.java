@@ -8,10 +8,10 @@ import java.util.List;
 public interface WordDao {
     //create
     void add(Word word);
-//
-//    //read
-//    List<Word> getAll();
-//    Word findById(int id);
+    //read
+
+    List<Word> getAll();
+    Word findById(int id);
 //
 //    //update
 //    void update();
