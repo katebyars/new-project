@@ -45,21 +45,20 @@ public class Sql2oWordDao implements WordDao {
         }
 
     }
-//
-//    @Override
-//    public void update(String name, String word, String definition, int id){
-//        String sql = "UPDATE words SET name = :name, word = :word, definition = :definition WHERE id = :id";
-//        try(Connection con = sql2o.open()){
-//            con.createQuery(sql)
-//                    .addParameter("name", name)
-//                    .addParameter("word", word)
-//                    .addParameter("definition", definition)
-//                    .addParameter("id", id)
-//                    .executeUpdate();
-//        } catch (Sql2oException ex) {
-//            System.out.println(ex);
-//        }
-//    }
+
+    @Override
+    public void update(String word, String definition, int id){
+        String sql = "UPDATE words SET word = :word, definition = :definition WHERE id = :id";
+        try(Connection con = sql2o.open()){
+            con.createQuery(sql)
+                    .addParameter("word", word)
+                    .addParameter("definition", definition)
+                    .addParameter("id", id)
+                    .executeUpdate();
+        } catch (Sql2oException ex) {
+            System.out.println(ex);
+        }
+    }
 //
 //    @Override
 //    public void deleteById(int id) {

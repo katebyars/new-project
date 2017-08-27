@@ -75,15 +75,15 @@ public class Sql2oWordDaoTest {
         wordDao.add(word2);
         assertEquals("Sono", wordDao.findById(2).getWord());
     }
-//
-//    @Test
-//    public void updateChangesName() {
-//        Word word = setUpAWord();
-//        wordDao.add(word);
-//        assertEquals("Italian", wordDao.findById(1).getName());
-//        wordDao.update("Italian", "Ho", "I", 1);
-//        assertEquals("Italian", wordDao.findById(1).getName());
-//    }
+
+    @Test
+    public void updateChangesName() {
+        Word word = setUpAWord();
+        wordDao.add(word);
+        assertEquals("Ciao", wordDao.findById(1).getWord());
+        wordDao.update("Buongiorno", "hello", 1);
+        assertEquals("Buongiorno", wordDao.findById(1).getWord());
+    }
 //
 //    @Test
 //    public void deleteAWordFromDao_True() {

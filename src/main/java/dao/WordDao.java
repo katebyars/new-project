@@ -12,9 +12,9 @@ public interface WordDao {
 
     List<Word> getAll();
     Word findById(int id);
-//
-//    //update
-//    void update();
+
+    //update
+    void update (String word, String definition, int id);
 //
 //    //delete
 //    void deleteById(int id);
