@@ -15,7 +15,7 @@ public interface WordDao {
 
     //update
     void update (String word, String definition, int id);
-//
-//    //delete
-//    void deleteById(int id);
+
+    //delete
+    void deleteById(int id);
 }

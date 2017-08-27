@@ -84,15 +84,15 @@ public class Sql2oWordDaoTest {
         wordDao.update("Buongiorno", "hello", 1);
         assertEquals("Buongiorno", wordDao.findById(1).getWord());
     }
-//
-//    @Test
-//    public void deleteAWordFromDao_True() {
-//        Word word = setUpAWord();
-//        wordDao.add(word);
-//        assertEquals(1, wordDao.getAll().size());
-//        wordDao.deleteById(1);
-//        assertEquals(0, wordDao.getAll().size());
-//    }
+
+    @Test
+    public void deleteAWordFromDao_True() {
+        Word word = setUpAWord();
+        wordDao.add(word);
+        assertEquals(1, wordDao.getAll().size());
+        wordDao.deleteById(1);
+        assertEquals(0, wordDao.getAll().size());
+    }
 //
 //    @Test
 //    public void deleteAllLocations() {
