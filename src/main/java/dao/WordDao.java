@@ -18,4 +18,5 @@ public interface WordDao {
 
     //delete
     void deleteById(int id);
+    void deleteAll();
 }

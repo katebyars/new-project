@@ -72,15 +72,15 @@ public class Sql2oWordDao implements WordDao {
         }
 
     }
-//
-//    @Override
-//    public void deleteAll() {
-//        String sql = "DELETE from words";
-//        try (Connection con = sql2o.open()) {
-//            con.createQuery(sql)
-//                    .executeUpdate();
-//        } catch (Sql2oException ex){
-//            System.out.println(ex);
-//        }
-//    }
+
+    @Override
+    public void deleteAll() {
+        String sql = "DELETE from words";
+        try (Connection con = sql2o.open()) {
+            con.createQuery(sql)
+                    .executeUpdate();
+        } catch (Sql2oException ex){
+            System.out.println(ex);
+        }
+    }
 }

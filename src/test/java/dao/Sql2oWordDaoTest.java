@@ -93,14 +93,14 @@ public class Sql2oWordDaoTest {
         wordDao.deleteById(1);
         assertEquals(0, wordDao.getAll().size());
     }
-//
-//    @Test
-//    public void deleteAllLocations() {
-//        Word word = setUpAWord();
-//        wordDao.add(word);
-//        assertEquals(1, wordDao.getAll().size());
-//        wordDao.deleteAll();
-//        assertEquals(0, wordDaod.getAll().size());
-//    }
+
+    @Test
+    public void deleteAllLocations() {
+        Word word = setUpAWord();
+        wordDao.add(word);
+        assertEquals(1, wordDao.getAll().size());
+        wordDao.deleteAll();
+        assertEquals(0, wordDao.getAll().size());
+    }
 
 }
