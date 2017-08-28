@@ -5,14 +5,23 @@ public class Word extends Language {
     private String word;
     private String definition;
     private int languageId;
-    private String photo;
+    private int id;
 
-    public Word(String name, int id, String word, String definition, int languageId, String photo) {
+    public Word (String word, String name) {
+        super(name);
+        this.word = word;
+        this.definition = "unknown";
+        this.id = id;
+        this.languageId = languageId;
+
+    }
+
+    public Word(String name, String word, String definition) {
         super(name);
         this.word = word;
         this.definition = definition;
         this.languageId = languageId;
-        this.photo = photo;
+        this.id = id;
     }
 
     public String getWord() {
@@ -39,14 +48,6 @@ public class Word extends Language {
         this.languageId = languageId;
     }
 
-    public String getPhoto() {
-        return photo;
-    }
-
-    public void setPhoto(String photo) {
-        this.photo = photo;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -56,18 +57,18 @@ public class Word extends Language {
         Word word1 = (Word) o;
 
         if (languageId != word1.languageId) return false;
+        if (id != word1.id) return false;
         if (!word.equals(word1.word)) return false;
-        if (!definition.equals(word1.definition)) return false;
-        return photo.equals(word1.photo);
+        return definition != null ? definition.equals(word1.definition) : word1.definition == null;
     }
 
     @Override
     public int hashCode() {
         int result = super.hashCode();
         result = 31 * result + word.hashCode();
-        result = 31 * result + definition.hashCode();
+        result = 31 * result + (definition != null ? definition.hashCode() : 0);
         result = 31 * result + languageId;
-        result = 31 * result + photo.hashCode();
+        result = 31 * result + id;
         return result;
     }
 }
