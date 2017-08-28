@@ -17,7 +17,7 @@ public class Sql2oResidenceDao implements ResidenceDao {
 
     @Override
     public void add(Residence residence) {
-        String sql = "INSERT INTO residences (residenceowner, foodiate, description, residenceaddress, description, locationid) VALUES (:residenceowner, :foodiate, :description, :residenceaddress, :description, :locationid)";
+        String sql = "INSERT INTO residences (residenceowner, foodiate, description, residenceaddress, locationid) VALUES (:residenceowner, :foodiate, :description, :residenceaddress, :description, :locationid)";
         try(Connection con = sql2o.open()){
             int id = (int) con.createQuery(sql)
                     .bind(residence)
@@ -55,17 +55,15 @@ public class Sql2oResidenceDao implements ResidenceDao {
     }
 
     @Override
-    public void update(int id, String name, String city, String region, String address, String owner, String foodiate, String description){
-        String sql = "UPDATE residences SET name = :name, city = :city, region = :region, address = :address, owner = :owner, foodiate = :foodiate, description = :description WHERE id=:id";
+    public void update(int id, String residenceowner, String foodiate, String description, String residenceaddress, int locationid) {
+        String sql = "UPDATE residences residenceowner = :residenceowner, foodiate = :foodiate, description = :description, residenceaddress = :residenceaddress, locationid = :locationid WHERE id=:id";
         try(Connection con = sql2o.open()){
             con.createQuery(sql)
-                    .addParameter("name", name)
-                    .addParameter("city", city)
-                    .addParameter("region", region)
-                    .addParameter("address", address)
-                    .addParameter("owner", owner)
+                    .addParameter("residenceOwner", residenceowner)
                     .addParameter("foodiate", foodiate)
                     .addParameter("description", description)
+                    .addParameter("residenceaddress", residenceaddress)
+                    .addParameter("locationid", locationid)
                     .addParameter("id", id)
                     .executeUpdate();
         } catch (Sql2oException ex) {

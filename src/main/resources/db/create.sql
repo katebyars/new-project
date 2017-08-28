@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS residences(
  foodiate VARCHAR,
  description VARCHAR,
  residenceaddress VARCHAR,
- locationId INTEGER
+ locationid INTEGER
 );
 
 

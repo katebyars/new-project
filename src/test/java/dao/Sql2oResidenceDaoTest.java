@@ -1,5 +1,6 @@
 package dao;
 
+import com.sun.org.apache.regexp.internal.RE;
 import models.Location;
 import models.Residence;
 import org.junit.After;
@@ -29,8 +30,7 @@ public class Sql2oResidenceDaoTest {
 
     //helper
     public Residence setUpResidence () {
-        return new Residence ("Dolly's House", "Istanbul", "Turkey", "1234 Easy Street", "Dolly and Ahmet", "kebabs", "What a wonderful time!") ;
-
+        return new Residence ("Istanbul", "Western Turkey", "Dolly and Akmet", "kebabs", "Wonderful dinner", "1234 Easy Street");
     }
 
     @Test
@@ -55,51 +55,53 @@ public class Sql2oResidenceDaoTest {
         assertEquals(1, idOfTest);
     }
 
-//    @Test
-//    public void getAllLocationsGetsAllLocations_True() {
-//        Location locationTest = setUpLocation();
-//        Location locationTest2 = setUpLocation();
-//        Location locationTest3 = setUpLocation();
-//        locationDao.add(locationTest);
-//        locationDao.add(locationTest2);
-//        locationDao.add(locationTest3);
-//        assertEquals(3, locationDao.getAll().size());
-//    }
-//
-//    @Test
-//    public void getLocationByID_Location() {
-//        Location location = setUpLocation();
-//        Location location1 = new Location("Hello", "Dolly", "I'm so glad to meet you", "Bye");
-//        locationDao.add(location);
-//        locationDao.add(location1);
-//        assertEquals("Hello", locationDao.findById(2).getName());
-//    }
-//
-//    @Test
-//    public void updateChangesName() {
-//        Location location = setUpLocation();
-//        locationDao.add(location);
-//        assertEquals("Ephesus", locationDao.findById(1).getName());
-//        locationDao.update(1, "Dionysus", "Sirince", "Western Turkey", "1234 Easy Street");
-//        assertEquals("Dionysus", locationDao.findById(1).getName());
-//    }
-//
-//    @Test
-//    public void deleteLocationFromDao_True() {
-//        Location location = setUpLocation();
-//        locationDao.add(location);
-//        assertEquals(1, locationDao.getAll().size());
-//        locationDao.deleteById(1);
-//        assertEquals(0, locationDao.getAll().size());
-//    }
-//
-//    @Test
-//    public void deleteAllLocations() {
-//        Location location = setUpLocation();
-//        locationDao.add(location);
-//        assertEquals(1, locationDao.getAll().size());
-//        locationDao.deleteAll();
-//        assertEquals(0, locationDao.getAll().size());
-//    }
+    @Test
+    public void getAllResidences_True() {
+        Residence residence1 = setUpResidence();
+        Residence residence2 = setUpResidence();
+        Residence residence3 = setUpResidence();
+        residenceDao.add(residence1);
+        residenceDao.add(residence2);
+        residenceDao.add(residence3);
+        assertEquals(3, residenceDao.getAll().size());
+    }
+
+    @Test
+    public void getResidenceById_True() {
+        Residence residence1 = setUpResidence();
+        Residence residence2 = setUpResidence();
+        Residence residence3 = new Residence("Ephesus", "Western Turkey", "Dolly and Akmet", "kebabs", "Wonderful dinner", "1234 Easy Street");
+        residenceDao.add(residence1);
+        residenceDao.add(residence2);
+        residenceDao.add(residence3);
+        assertEquals("Ephesus", residenceDao.findById(3).getCity());
+    }
+
+    @Test
+    public void updateChangesName() {
+        Residence residence = setUpResidence();
+        residenceDao.add(residence);
+        assertEquals("Istanbul", residenceDao.findById(1).getCity());
+        residenceDao.update(1, "Dolly", "kebabs", "great kababs", "1234 Easy Street", 1);
+        assertEquals("Dolly", residenceDao.findById(1).getResidenceOwner());
+    }
+
+    @Test
+    public void deleteLocationFromDao_True() {
+        Residence residence = setUpResidence();
+        residenceDao.add(residence);
+        assertEquals(1, residenceDao.getAll().size());
+        residenceDao.deleteById(1);
+        assertEquals(0, residenceDao.getAll().size());
+    }
+
+    @Test
+    public void deleteAllLocations() {
+        Residence residence = setUpResidence();
+        residenceDao.add(residence);
+        assertEquals(1, residenceDao.getAll().size());
+        residenceDao.deleteAll();
+        assertEquals(0, residenceDao.getAll().size());
+    }
 
 }
