@@ -30,7 +30,7 @@ public class Sql2oWordDaoTest {
 
     //helper
     public Word setUpAWord () {
-        return new Word ("Italian", "Ciao", "Hello") ;
+        return new Word ("Italian", "Ciao", "Hello", 1) ;
 
     }
 
@@ -70,7 +70,7 @@ public class Sql2oWordDaoTest {
     @Test
     public void getWordById() {
         Word word = setUpAWord();
-        Word word2 = new Word("Italian", "Sono", "I am");
+        Word word2 = new Word("Italian", "Sono", "I am", 1);
         wordDao.add(word);
         wordDao.add(word2);
         assertEquals("Sono", wordDao.findById(2).getWord());

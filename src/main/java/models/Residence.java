@@ -8,12 +8,12 @@ public class Residence extends Location {
     private String residenceaddress;
     private int locationId;
 
-    public Residence(String city, String region, String residenceowner, String foodiate, String description, String residenceAddress) {
+    public Residence(String city, String region, String residenceowner, String foodiate, String description, String residenceaddress) {
         super(city, region);
         this.residenceowner = residenceowner;
         this.foodiate = foodiate;
         this.description = description;
-        this.residenceaddress = residenceAddress;
+        this.residenceaddress = residenceaddress;
     }
 
     public int getLocationId() {
@@ -24,46 +24,13 @@ public class Residence extends Location {
         this.locationId = locationId;
     }
 
+    public String getResidenceowner() {return residenceowner;}
 
-    public String getResidenceOwner() {
-        return residenceowner;
-    }
+    public void setResidenceowner(String residenceowner) {this.residenceowner = residenceowner;}
 
-    public void setResidenceOwner(String residenceOwner) {
-        this.residenceowner = residenceOwner;
-    }
+    public String getResidenceaddress() {return residenceaddress;}
 
-    public String getFoodIAte() {
-        return foodiate;
-    }
-
-    public void setFoodIAte(String foodIAte) {
-        this.foodiate = foodIAte;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getResidenceAddress() {
-        return residenceaddress;
-    }
-
-    public void setResidenceAddress(String residenceAddress) {
-        this.residenceaddress = residenceAddress;
-    }
-
-    public String getResidenceowner() {
-        return residenceowner;
-    }
-
-    public void setResidenceowner(String residenceowner) {
-        this.residenceowner = residenceowner;
-    }
+    public void setResidenceaddress(String residenceaddress) {this.residenceaddress = residenceaddress;}
 
     public String getFoodiate() {
         return foodiate;
@@ -72,6 +39,14 @@ public class Residence extends Location {
     public void setFoodiate(String foodiate) {
         this.foodiate = foodiate;
     }
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
 
     @Override
     public boolean equals(Object o) {

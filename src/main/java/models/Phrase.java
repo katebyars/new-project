@@ -3,9 +3,10 @@ package models;
 public class Phrase extends Language {
     private String phrase;
     private String definition;
+    int languageid;
 
-    public Phrase(String name, String phrase, String definition) {
-        super(name);
+    public Phrase(String languagename, String phrase, String definition) {
+        super(languagename);
         this.phrase = phrase;
         this.definition = definition;
     }
@@ -26,6 +27,14 @@ public class Phrase extends Language {
         this.definition = definition;
     }
 
+    public int getLanguageid() {
+        return languageid;
+    }
+
+    public void setLanguageid(int languageid) {
+        this.languageid = languageid;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -34,6 +43,7 @@ public class Phrase extends Language {
 
         Phrase phrase1 = (Phrase) o;
 
+        if (languageid != phrase1.languageid) return false;
         if (!phrase.equals(phrase1.phrase)) return false;
         return definition.equals(phrase1.definition);
     }
@@ -43,6 +53,7 @@ public class Phrase extends Language {
         int result = super.hashCode();
         result = 31 * result + phrase.hashCode();
         result = 31 * result + definition.hashCode();
+        result = 31 * result + languageid;
         return result;
     }
 }

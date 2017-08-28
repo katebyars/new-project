@@ -17,7 +17,7 @@ public class Sql2oResidenceDao implements ResidenceDao {
 
     @Override
     public void add(Residence residence) {
-        String sql = "INSERT INTO residences (city, region, residenceowner, foodiate, description, residenceAddress) VALUES (:city, :region, :residenceowner, :foodiate, :description, :residenceAddress)";
+        String sql = "INSERT INTO residences (city, region, residenceowner, foodiate, description, residenceaddress) VALUES (:city, :region, :residenceowner, :foodiate, :description, :residenceaddress)";
         try(Connection con = sql2o.open()){
             int id = (int) con.createQuery(sql)
                     .bind(residence)
@@ -53,22 +53,24 @@ public class Sql2oResidenceDao implements ResidenceDao {
     public List<Residence> getAllResidencesByLocation(int locationId) {
         return null;
     }
-
-    @Override
-    public void update(int id, String residenceowner, String foodiate, String description, String residenceaddress) {
-        String sql = "UPDATE residences residenceowner = :residenceowner, foodiate = :foodiate, description = :description, residenceaddress = :residenceaddress, locationid = :locationid WHERE id=:id";
-        try(Connection con = sql2o.open()){
-            con.createQuery(sql)
-                    .addParameter("residenceOwner", residenceowner)
-                    .addParameter("foodiate", foodiate)
-                    .addParameter("description", description)
-                    .addParameter("residenceaddress", residenceaddress)
-                    .addParameter("id", id)
-                    .executeUpdate();
-        } catch (Sql2oException ex) {
-            System.out.println(ex);
-        }
-    }
+//
+//    @Override
+//    public void update(int id, String city, String region, String residenceowner, String foodiate, String description, String residenceaddress) {
+//        String sql = "UPDATE residences city = :city, region = :region, residenceowner = :residenceowner, foodiate = :foodiate, description = :description, residenceaddress = :residenceaddress WHERE id=:id";
+//        try(Connection con = sql2o.open()){
+//            con.createQuery(sql)
+//                    .addParameter("city", city)
+//                    .addParameter("region", region)
+//                    .addParameter("residenceowner", residenceowner)
+//                    .addParameter("foodiate", foodiate)
+//                    .addParameter("description", description)
+//                    .addParameter("residenceaddress", residenceaddress)
+//                    .addParameter("id", id)
+//                    .executeUpdate();
+//        } catch (Sql2oException ex) {
+//            System.out.println(ex);
+//        }
+//    }
 
     @Override
     public void deleteById(int id) {

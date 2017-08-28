@@ -15,7 +15,7 @@ public class Sql2oWordDao implements WordDao {
 
     @Override
     public void add(Word word) {
-        String sql = "INSERT INTO words (word, definition, languageid) VALUES (:word, :definition, :languageid)";
+        String sql = "INSERT INTO words (word, definition, languageId) VALUES (:word, :definition, :languageId)";
         try (Connection con = sql2o.open()) {
             int id = (int) con.createQuery(sql)
                     .bind(word)
