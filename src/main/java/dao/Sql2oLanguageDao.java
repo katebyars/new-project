@@ -48,11 +48,11 @@ public class Sql2oLanguageDao implements LanguageDao {
     }
 
     @Override
-    public void update(int id, String name){
-        String sql = "UPDATE languages SET name = :name WHERE id=:id";
+    public void update(int id, String languagename){
+        String sql = "UPDATE languages SET languagename = :languagename WHERE id=:id";
         try(Connection con = sql2o.open()){
             con.createQuery(sql)
-                    .addParameter("name", name)
+                    .addParameter("languagename", languagename)
                     .addParameter("id", id)
                     .executeUpdate();
         } catch (Sql2oException ex) {

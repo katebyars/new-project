@@ -32,10 +32,15 @@ public class Sql2oLanguageDaoTest {
     }
 
     @Test
-    public void addLanguageAddsALanguageAndAddsToDao_True() throws Exception {
+    public void addLanguageAddsInstanceOfLanguage_True() throws Exception {
+        Language testLanguage = setUpLanguage();
+        assertTrue(testLanguage instanceof Language);
+    }
+
+    @Test
+    public void addLanguageAddsALanguageToDao_True() throws Exception {
         Language testLanguage = setUpLanguage();
         languageDao.add(testLanguage);
-        assertTrue(testLanguage instanceof Language);
         assertEquals(1,languageDao.getAll().size());
     }
 
@@ -59,21 +64,21 @@ public class Sql2oLanguageDaoTest {
     }
 
     @Test
-    public void getLanguageByID_Location() {
+    public void getLanguageByID() {
         Language language = setUpLanguage();
         Language language1 = new Language("Sicilian");
         languageDao.add(language);
         languageDao.add(language1);
-        assertEquals("Turkish", languageDao.findById(1).getLanguageName());
+        assertEquals("Turkish", languageDao.findById(1).getlanguagename());
     }
 
     @Test
     public void updateChangesName() {
         Language language = setUpLanguage();
         languageDao.add(language);
-        assertEquals("Turkish", languageDao.findById(1).getLanguageName());
+//        assertEquals("Turkish", languageDao.findById(1).getlanguagename());
         languageDao.update(1, "Italian");
-        assertEquals("Italian", languageDao.findById(1).getLanguageName());
+        assertEquals("Italian", languageDao.findById(1).getlanguagename());
     }
 
     @Test

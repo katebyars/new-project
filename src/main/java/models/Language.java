@@ -2,20 +2,20 @@ package models;
 
 public class Language {
 
-    private String languageName;
+    private String languagename;
     private int id;
 
-    public Language(String languageName) {
+    public Language(String languagename) {
 
-        this.languageName = languageName;
+        this.languagename = languagename;
     }
 
-    public String getLanguageName() {
-        return languageName;
+    public String getlanguagename() {
+        return languagename;
     }
 
-    public void setLanguageName(String languageName) {
-        this.languageName = languageName;
+    public void setLanguageName(String languagename) {
+        this.languagename = languagename;
     }
 
     public int getId() {
@@ -33,11 +33,11 @@ public class Language {
 
         Language language = (Language) o;
 
-        return languageName.equals(language.languageName);
+        return languagename.equals(language.languagename);
     }
 
     @Override
     public int hashCode() {
-        return languageName.hashCode();
+        return languagename.hashCode();
     }
 }

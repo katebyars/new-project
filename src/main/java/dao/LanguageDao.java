@@ -14,7 +14,7 @@ public interface LanguageDao {
     Language findById(int id);
 
     //update
-    void update(int id, String name);
+    void update(int id, String languagename);
 
     //delete
     void deleteById(int id); //see above
