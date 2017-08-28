@@ -12,7 +12,7 @@ public interface LocationDao {
     //read
     List<Location> getAll();
     Location findById(int id);
-    List<Residence> getResidencebyLocation(int locationId);
+    List<Residence> getResidencesbyLocation(int locationId);
 
     //update
     void update(int id, String city, String region);

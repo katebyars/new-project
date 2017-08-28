@@ -102,9 +102,9 @@ public class Sql2oLocationDao implements LocationDao {
     }
 
     @Override
-    public List<Residence> getResidencebyLocation(int locationId) {
+    public List<Residence> getResidencesbyLocation(int locationId) {
         List<Residence> residences = new ArrayList<>();
-        String sql = "SELECT * FROM locations_residences WHERE locationId = :locationId";
+        String sql = "SELECT residenceId FROM locations_residences WHERE locationId = :locationId";
         try (Connection con = sql2o.open()) {
             List<Integer> residencesIds = con.createQuery(sql)
                     .addParameter("locationId", locationId)
@@ -114,8 +114,7 @@ public class Sql2oLocationDao implements LocationDao {
                 residences.add(
                         con.createQuery(queryOther)
                         .addParameter("residenceId", residenceId)
-                        .executeAndFetch()
-                )
+                        .executeAndFetchFirst(Residence.class));
             }
         } catch (Sql2oException e) {
             System.out.println(e);

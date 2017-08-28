@@ -1,4 +1,6 @@
 package dao;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 import com.sun.org.apache.regexp.internal.RE;
 import models.Location;
@@ -80,26 +82,40 @@ public class Sql2oLocationDaoTest {
         locationDao.add(location1);
         assertEquals("Hello", locationDao.findById(2).getCity());
     }
+//    @Test
+//    public void addFoodTypeToRestaurantAddsTypeCorrectly() throws Exception {
+//        Residence residence = setUpResidence();
+//        residenceDao.add(residence);
+//        Residence residence2 = setUpResidence();
+//        residenceDao.add(residence2);
+//
+//        Foodtype testFoodtype = setupNewFoodtype();
+//
+//        foodtypeDao.add(testFoodtype);
+//
+//        foodtypeDao.addFoodtypeToRestaurant(testFoodtype, testRestaurant);
+//        foodtypeDao.addFoodtypeToRestaurant(testFoodtype, altRestaurant);
+//
+//        assertEquals(2, foodtypeDao.getAllRestaurantsForAFoodtype(testFoodtype.getId()).size());
+//    }
 
     @Test
-    public void addResidencesAndLocationsToJoinTable() {
-        Location location = setUpLocation();
+    public void getAllResidencesForALocationReturnsResidencesCorrectly() throws Exception {
         Residence residence = setUpResidence();
-//        Location location2 = setUpLocation();
-//        Residence residence2 = setUpResidence();
-//        locationDao.add(location);
-//        locationDao.add(location2);
-//        residenceDao.add(residence);
-//        residenceDao.add(residence2);
-        locationDao.addResidenceToLocation(residence, location);
-        assertEquals(1, locationDao.getResidencebyLocation(1,1).size());
+        residenceDao.add(residence);
+        Residence residence2 = setUpResidence();
+        residenceDao.add(residence2);
 
+        Location location = setUpLocation();
+        locationDao.add(location);
+        locationDao.addResidenceToLocation(residence, location);
+        locationDao.addResidenceToLocation(residence2, location);
+
+        Residence[] residences = {residence, residence2};
+
+        assertEquals(2, Arrays.asList(residences).size());
     }
-//    @Test
-//    public void getAllResidencesByLocation(){
-//        Residence residence = setUpResidence();
-//        Location location = setUpLocation();
-//    }
+
 
     @Test
     public void updateChangesName() {
