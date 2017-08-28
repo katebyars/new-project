@@ -14,11 +14,10 @@ public interface ResidenceDao {
     //read
     List<Residence> getAll();
     Residence findById(int id);
-    List<Residence> getAllResidencesByLocation(int locationId);
 
 
     //update
-//    void update(int id, String city, String region, String residenceowner, String foodiate, String description, String residenceaddress);
+    void update(int id, String city, String region, String residenceowner, String foodiate, String description, String residenceaddress);
 
     //delete
     void deleteById(int id); //see above

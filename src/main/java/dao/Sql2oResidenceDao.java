@@ -4,7 +4,7 @@ import models.Residence;
 import org.sql2o.Connection;
 import org.sql2o.Sql2o;
 import org.sql2o.Sql2oException;
-
+import java.util.ArrayList;
 import java.util.List;
 
 public class Sql2oResidenceDao implements ResidenceDao {
@@ -46,31 +46,25 @@ public class Sql2oResidenceDao implements ResidenceDao {
                     .addParameter("id", id)
                     .executeAndFetchFirst(Residence.class);
         }
-
     }
 
     @Override
-    public List<Residence> getAllResidencesByLocation(int locationId) {
-        return null;
+    public void update(int id, String city, String region, String residenceowner, String foodiate, String description, String residenceaddress) {
+        String sql = "UPDATE residences SET city = :city, region = :region, residenceowner = :residenceowner, foodiate = :foodiate, description = :description, residenceaddress = :residenceaddress WHERE id=:id";
+        try(Connection con = sql2o.open()){
+            con.createQuery(sql)
+                    .addParameter("city", city)
+                    .addParameter("region", region)
+                    .addParameter("residenceowner", residenceowner)
+                    .addParameter("foodiate", foodiate)
+                    .addParameter("description", description)
+                    .addParameter("residenceaddress", residenceaddress)
+                    .addParameter("id", id)
+                    .executeUpdate();
+        } catch (Sql2oException ex) {
+            System.out.println(ex);
+        }
     }
-//
-//    @Override
-//    public void update(int id, String city, String region, String residenceowner, String foodiate, String description, String residenceaddress) {
-//        String sql = "UPDATE residences city = :city, region = :region, residenceowner = :residenceowner, foodiate = :foodiate, description = :description, residenceaddress = :residenceaddress WHERE id=:id";
-//        try(Connection con = sql2o.open()){
-//            con.createQuery(sql)
-//                    .addParameter("city", city)
-//                    .addParameter("region", region)
-//                    .addParameter("residenceowner", residenceowner)
-//                    .addParameter("foodiate", foodiate)
-//                    .addParameter("description", description)
-//                    .addParameter("residenceaddress", residenceaddress)
-//                    .addParameter("id", id)
-//                    .executeUpdate();
-//        } catch (Sql2oException ex) {
-//            System.out.println(ex);
-//        }
-//    }
 
     @Override
     public void deleteById(int id) {
@@ -95,8 +89,6 @@ public class Sql2oResidenceDao implements ResidenceDao {
             System.out.println(ex);
         }
     }
-
-
 
 
 }

@@ -6,6 +6,7 @@ import models.Residence;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.experimental.theories.suppliers.TestedOn;
 import org.sql2o.Connection;
 import org.sql2o.Sql2o;
 
@@ -13,6 +14,7 @@ import static org.junit.Assert.*;
 
 public class Sql2oResidenceDaoTest {
     private Sql2oResidenceDao residenceDao;
+    private Sql2oLocationDao locationDao;
     private Connection conn;
 
     @Before
@@ -20,6 +22,7 @@ public class Sql2oResidenceDaoTest {
         String connectionString = "jdbc:h2:mem:testing;INIT=RUNSCRIPT from 'classpath:db/create.sql'";
         Sql2o sql2o = new Sql2o(connectionString, "", "");
         residenceDao = new Sql2oResidenceDao(sql2o);
+        locationDao = new Sql2oLocationDao(sql2o);
         conn = sql2o.open();
     }
 
@@ -27,6 +30,12 @@ public class Sql2oResidenceDaoTest {
     public void tearDown() throws Exception {
         conn.close();
     }
+
+    //helper
+    public Location setUpLocation () {
+        return new Location ("Ephesus","Western Turkey") ;
+    }
+
 
     //helper
     public Residence setUpResidence () {
@@ -77,14 +86,14 @@ public class Sql2oResidenceDaoTest {
         assertEquals("Ephesus", residenceDao.findById(3).getCity());
     }
 
-//    @Test
-//    public void updateChangesName() {
-//        Residence residence = setUpResidence();
-//        residenceDao.add(residence);
-////        assertEquals("Dolly and Akmet", residenceDao.findById(1).getResidenceowner());
-//        residenceDao.update(1, "Istanbul","Dolly", "Dolly", "kebabs", "great kababs", "1234 Easy Street");
-//        assertEquals("Dolly", residenceDao.findById(1).getResidenceowner());
-//    }
+    @Test
+    public void updateChangesName() {
+        Residence residence = setUpResidence();
+        residenceDao.add(residence);
+//        assertEquals("Dolly and Akmet", residenceDao.findById(1).getResidenceowner());
+        residenceDao.update(1, "Istanbul","Dolly", "Dolly", "kebabs", "great kababs", "1234 Easy Street");
+        assertEquals("Dolly", residenceDao.findById(1).getResidenceowner());
+    }
 
     @Test
     public void deleteLocationFromDao_True() {
@@ -103,5 +112,20 @@ public class Sql2oResidenceDaoTest {
         residenceDao.deleteAll();
         assertEquals(0, residenceDao.getAll().size());
     }
+
+//    @Test
+//    public void allResidencesReturnedByLocation(){
+//        Residence residence = setUpResidence();
+//        Residence residence2 = setUpResidence();
+//        Residence residence3 = new Residence("Ephesus", "Western Turkey", "Dolly and Akmet", "kebabs", "Wonderful dinner", "1234 Easy Street");
+//        assertEquals(1, residenceDao.getAllResidencesByLocation(2).size());
+//    }
+//    @Test
+//    public void residenceHasCorrectLocation() {
+//        Residence residence = setUpResidence();
+//        residenceDao.add(residence);
+//        int location = residence.getLocationId();
+//        assertEquals(1, location);
+//    }
 
 }

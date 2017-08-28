@@ -37,6 +37,17 @@ CREATE TABLE IF NOT EXISTS residences(
  residenceaddress VARCHAR
 );
 
+CREATE TABLE IF NOT EXISTS locations_residences(
+id int PRIMARY KEY auto_increment,
+locationId INTEGER,
+residenceId INTEGER
+);
+
+
+--languages_words
+--languages_phrases
+--words_phrases
+
 --CREATE TABLE IF NOT EXISTS restaurants (
 -- id int PRIMARY KEY auto_increment,
 -- restaurantname VARCHAR,

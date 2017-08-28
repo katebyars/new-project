@@ -1,6 +1,8 @@
 package dao;
 
+import com.sun.org.apache.regexp.internal.RE;
 import models.Location;
+import models.Residence;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,6 +14,7 @@ import static org.junit.Assert.*;
 public class Sql2oLocationDaoTest {
 
     private Sql2oLocationDao locationDao;
+    private Sql2oResidenceDao residenceDao;
     private Connection conn;
 
     @Before
@@ -19,6 +22,7 @@ public class Sql2oLocationDaoTest {
         String connectionString = "jdbc:h2:mem:testing;INIT=RUNSCRIPT from 'classpath:db/create.sql'";
         Sql2o sql2o = new Sql2o(connectionString, "", "");
         locationDao = new Sql2oLocationDao(sql2o);
+        residenceDao = new Sql2oResidenceDao(sql2o);
         conn = sql2o.open();
     }
 
@@ -30,7 +34,11 @@ public class Sql2oLocationDaoTest {
     //helper
     public Location setUpLocation () {
         return new Location ("Ephesus","Western Turkey") ;
+    }
 
+    //helper
+    public Residence setUpResidence () {
+        return new Residence ("Istanbul", "Western Turkey", "Dolly and Akmet", "kebabs", "Wonderful dinner", "1234 Easy Street");
     }
 
     @Test
@@ -72,6 +80,26 @@ public class Sql2oLocationDaoTest {
         locationDao.add(location1);
         assertEquals("Hello", locationDao.findById(2).getCity());
     }
+
+    @Test
+    public void addResidencesAndLocationsToJoinTable() {
+        Location location = setUpLocation();
+        Residence residence = setUpResidence();
+//        Location location2 = setUpLocation();
+//        Residence residence2 = setUpResidence();
+//        locationDao.add(location);
+//        locationDao.add(location2);
+//        residenceDao.add(residence);
+//        residenceDao.add(residence2);
+        locationDao.addResidenceToLocation(residence, location);
+        assertEquals(1, locationDao.getResidencebyLocation(1,1).size());
+
+    }
+//    @Test
+//    public void getAllResidencesByLocation(){
+//        Residence residence = setUpResidence();
+//        Location location = setUpLocation();
+//    }
 
     @Test
     public void updateChangesName() {
