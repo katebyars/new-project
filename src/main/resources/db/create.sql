@@ -5,63 +5,51 @@ CREATE TABLE IF NOT EXISTS languages (
  name VARCHAR
 );
 
+CREATE TABLE IF NOT EXISTS phrases (
+ id int PRIMARY KEY auto_increment,
+ phrase VARCHAR,
+ definition VARCHAR,
+);
+
+
+CREATE TABLE IF NOT EXISTS words (
+ id int PRIMARY KEY auto_increment,
+ word VARCHAR,
+ definition VARCHAR,
+ );
+
 
 CREATE TABLE IF NOT EXISTS locations(
  id int PRIMARY KEY auto_increment,
  name VARCHAR,
  city VARCHAR,
  region VARCHAR,
- address VARCHAR
+);
+
+CREATE TABLE IF NOT EXISTS residences(
+ id int PRIMARY KEY auto_increment,
+ residenceowner VARCHAR,
+ foodiate VARCHAR,
+ description VARCHAR,
+ residenceaddress VARCHAR,
+ locationId INTEGER
 );
 
 
-CREATE TABLE IF NOT EXISTS phrases (
+CREATE TABLE IF NOT EXISTS restaurants (
+ id int PRIMARY KEY auto_increment,
+ restaurantname VARCHAR,
+ foodiate VARCHAR,
+ restaurantaddress VARCHAR,
+ description VARCHAR,
+ locationid INTEGER
+ );
+
+
+CREATE TABLE IF NOT EXISTS sites (
  id int PRIMARY KEY auto_increment,
  name VARCHAR,
- phrase VARCHAR,
- definition VARCHAR,
-);
-
-
---CREATE TABLE IF NOT EXISTS residences(
--- id int PRIMARY KEY auto_increment,
--- name VARCHAR,
--- city VARCHAR,
--- region VARCHAR
--- address VARCHAR,
--- residenceowner VARCHAR,
--- foodiate VARCHAR,
--- description VARCHAR,
---);
-
---
---CREATE TABLE IF NOT EXISTS restaurants (
--- id int PRIMARY KEY auto_increment,
--- name VARCHAR,
--- foodiate VARCHAR,
--- address VARCHAR,
--- description VARCHAR,
--- locationid INTEGER
--- );
---
---
---CREATE TABLE IF NOT EXISTS sights (
--- id int PRIMARY KEY auto_increment,
--- name VARCHAR,
--- address VARCHAR,
--- description VARCHAR,
--- locationid INTEGER
--- );
---
---
---CREATE TABLE IF NOT EXISTS words (
--- id int PRIMARY KEY auto_increment,
--- word VARCHAR,
--- definition VARCHAR,
--- photo VARCHAR,
--- languageid INTEGER
--- );
---
---
---
---
+ address VARCHAR,
+ description VARCHAR,
+ locationid INTEGER
+ );

@@ -1,7 +1,6 @@
 package dao;
 
 import models.Language;
-import models.Location;
 import models.Phrase;
 import models.Word;
 import org.sql2o.Connection;

@@ -5,12 +5,23 @@ public class Residence extends Location {
     private String residenceOwner;
     private String foodIAte;
     private String description;
+    private String residenceAddress;
+    private String locationId;
 
-    public Residence(String name, String city, String region, String address, String residenceOwner, String foodIAte, String description) {
-        super(name, city, region, address);
+    public Residence(String name, String city, String region, String address, String residenceOwner, String foodIAte, String description, String residenceAddress) {
+        super(name, city, region);
         this.residenceOwner = residenceOwner;
         this.foodIAte = foodIAte;
         this.description = description;
+        this.residenceAddress = residenceAddress;
+    }
+
+    public String getLocationId() {
+        return locationId;
+    }
+
+    public void setLocationId(String locationId) {
+        this.locationId = locationId;
     }
 
     public String getResidenceOwner() {
@@ -37,7 +48,13 @@ public class Residence extends Location {
         this.description = description;
     }
 
+    public String getResidenceAddress() {
+        return residenceAddress;
+    }
 
+    public void setResidenceAddress(String residenceAddress) {
+        this.residenceAddress = residenceAddress;
+    }
 
     @Override
     public boolean equals(Object o) {

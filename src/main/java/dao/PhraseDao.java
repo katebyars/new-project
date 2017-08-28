@@ -14,7 +14,7 @@ public interface PhraseDao {
     List<Phrase> getAll();
     Phrase findById(int id);
     List<Phrase> getAllPhrasesByLanguage(Language language);
-     List<Phrase> getAllPhrasesThatHaveASingleWord(Word word);
+    List<Phrase> getAllPhrasesThatHaveASingleWord(Word word);
 
 
     //update

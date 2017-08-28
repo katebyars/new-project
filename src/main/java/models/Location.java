@@ -3,16 +3,14 @@ package models;
 public class Location {
 
     private String name;
-    private String City;
-    private String Region;
-    private String address;
+    private String city;
+    private String region;
     private int id;
 
-    public Location(String name, String city, String region, String address) {
+    public Location(String name, String city, String region) {
         this.name = name;
-        City = city;
-        Region = region;
-        this.address = address;
+        this.city = city;
+        this.region = region;
         this.id = id;
     }
 
@@ -25,27 +23,19 @@ public class Location {
     }
 
     public String getCity() {
-        return City;
+        return city;
     }
 
     public void setCity(String city) {
-        City = city;
+        city = city;
     }
 
     public String getRegion() {
-        return Region;
+        return region;
     }
 
     public void setRegion(String region) {
-        Region = region;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
+        region = region;
     }
 
     public int getId() {
@@ -65,17 +55,15 @@ public class Location {
 
         if (id != location.id) return false;
         if (!name.equals(location.name)) return false;
-        if (City != null ? !City.equals(location.City) : location.City != null) return false;
-        if (Region != null ? !Region.equals(location.Region) : location.Region != null) return false;
-        return address != null ? address.equals(location.address) : location.address == null;
+        if (!city.equals(location.city)) return false;
+        return region.equals(location.region);
     }
 
     @Override
     public int hashCode() {
         int result = name.hashCode();
-        result = 31 * result + (City != null ? City.hashCode() : 0);
-        result = 31 * result + (Region != null ? Region.hashCode() : 0);
-        result = 31 * result + (address != null ? address.hashCode() : 0);
+        result = 31 * result + city.hashCode();
+        result = 31 * result + region.hashCode();
         result = 31 * result + id;
         return result;
     }

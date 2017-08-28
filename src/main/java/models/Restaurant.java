@@ -2,29 +2,26 @@ package models;
 
 public class Restaurant extends Location {
 
-    private String name;
+    private String restaurantName;
     private String foodIAte;
-    private String address;
+    private String restaurantAddress;
     private String description;
     private int locationId;
 
-    public Restaurant(String name, String city, String region, String address, int id, String name1, String foodIAte, String address1, String description, int locationId) {
-        super(name, city, region, address);
-        this.name = name1;
+    public Restaurant(String name, String city, String region, String restaurantName, String foodIAte, String restaurantAddress, String description) {
+        super(name, city, region);
+        this.restaurantName = restaurantName;
         this.foodIAte = foodIAte;
-        this.address = address1;
+        this.restaurantAddress = restaurantAddress;
         this.description = description;
-        this.locationId = locationId;
     }
 
-    @Override
-    public String getName() {
-        return name;
+    public String getRestaurantName() {
+        return restaurantName;
     }
 
-    @Override
-    public void setName(String name) {
-        this.name = name;
+    public void setRestaurantName(String restaurantName) {
+        this.restaurantName = restaurantName;
     }
 
     public String getFoodIAte() {
@@ -35,14 +32,20 @@ public class Restaurant extends Location {
         this.foodIAte = foodIAte;
     }
 
-    @Override
-    public String getAddress() {
-        return address;
+    public String getRetaurantName() {
+        return restaurantName;
     }
 
-    @Override
-    public void setAddress(String address) {
-        this.address = address;
+    public void setRetaurantName(String retaurantName) {
+        this.restaurantName = retaurantName;
+    }
+
+    public String getRestaurantAddress() {
+        return restaurantAddress;
+    }
+
+    public void setRestaurantAddress(String restaurantAddress) {
+        this.restaurantAddress = restaurantAddress;
     }
 
     public String getDescription() {
@@ -70,18 +73,18 @@ public class Restaurant extends Location {
         Restaurant that = (Restaurant) o;
 
         if (locationId != that.locationId) return false;
-        if (!name.equals(that.name)) return false;
+        if (!restaurantName.equals(that.restaurantName)) return false;
         if (!foodIAte.equals(that.foodIAte)) return false;
-        if (!address.equals(that.address)) return false;
+        if (!restaurantAddress.equals(that.restaurantAddress)) return false;
         return description.equals(that.description);
     }
 
     @Override
     public int hashCode() {
         int result = super.hashCode();
-        result = 31 * result + name.hashCode();
+        result = 31 * result + restaurantName.hashCode();
         result = 31 * result + foodIAte.hashCode();
-        result = 31 * result + address.hashCode();
+        result = 31 * result + restaurantAddress.hashCode();
         result = 31 * result + description.hashCode();
         result = 31 * result + locationId;
         return result;

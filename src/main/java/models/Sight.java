@@ -2,46 +2,41 @@ package models;
 
 public class Sight extends Location {
 
-    private String name;
-    private String address;
-    private String description;
+    private String siteName;
+    private String siteAddress;
+    private String siteDescription;
     private int locationId;
 
 
-    public Sight(String name, String city, String region, String address, int id, String name1, String address1, String description, int locationId) {
-        super(name, city, region, address);
-        this.name = name1;
-        this.address = address1;
-        this.description = description;
-        this.locationId = locationId;
+    public Sight(String name, String city, String region, String siteName, String siteAddress, String siteDescription) {
+        super(name, city, region);
+        this.siteName = siteName;
+        this.siteAddress = siteAddress;
+        this.siteDescription = siteDescription;
     }
 
-    @Override
-    public String getName() {
-        return name;
+    public String getSiteName() {
+        return siteName;
     }
 
-    @Override
-    public void setName(String name) {
-        this.name = name;
+    public void setSiteName(String siteName) {
+        this.siteName = siteName;
     }
 
-    @Override
-    public String getAddress() {
-        return address;
+    public String getSiteAddress() {
+        return siteAddress;
     }
 
-    @Override
-    public void setAddress(String address) {
-        this.address = address;
+    public void setSiteAddress(String siteAddress) {
+        this.siteAddress = siteAddress;
     }
 
-    public String getDescription() {
-        return description;
+    public String getSiteDescription() {
+        return siteDescription;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setSiteDescription(String siteDescription) {
+        this.siteDescription = siteDescription;
     }
 
     public int getLocationId() {
@@ -61,17 +56,17 @@ public class Sight extends Location {
         Sight sight = (Sight) o;
 
         if (locationId != sight.locationId) return false;
-        if (!name.equals(sight.name)) return false;
-        if (!address.equals(sight.address)) return false;
-        return description.equals(sight.description);
+        if (!siteName.equals(sight.siteName)) return false;
+        if (!siteAddress.equals(sight.siteAddress)) return false;
+        return siteDescription.equals(sight.siteDescription);
     }
 
     @Override
     public int hashCode() {
         int result = super.hashCode();
-        result = 31 * result + name.hashCode();
-        result = 31 * result + address.hashCode();
-        result = 31 * result + description.hashCode();
+        result = 31 * result + siteName.hashCode();
+        result = 31 * result + siteAddress.hashCode();
+        result = 31 * result + siteDescription.hashCode();
         result = 31 * result + locationId;
         return result;
     }
