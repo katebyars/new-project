@@ -17,7 +17,7 @@ public class Sql2oResidenceDao implements ResidenceDao {
 
     @Override
     public void add(Residence residence) {
-        String sql = "INSERT INTO residences (residenceowner, foodiate, description, residenceaddress, locationid) VALUES (:residenceowner, :foodiate, :description, :residenceaddress, :description, :locationid)";
+        String sql = "INSERT INTO residences (city, region, residenceowner, foodiate, description, residenceAddress) VALUES (:city, :region, :residenceowner, :foodiate, :description, :residenceAddress)";
         try(Connection con = sql2o.open()){
             int id = (int) con.createQuery(sql)
                     .bind(residence)
@@ -55,7 +55,7 @@ public class Sql2oResidenceDao implements ResidenceDao {
     }
 
     @Override
-    public void update(int id, String residenceowner, String foodiate, String description, String residenceaddress, int locationid) {
+    public void update(int id, String residenceowner, String foodiate, String description, String residenceaddress) {
         String sql = "UPDATE residences residenceowner = :residenceowner, foodiate = :foodiate, description = :description, residenceaddress = :residenceaddress, locationid = :locationid WHERE id=:id";
         try(Connection con = sql2o.open()){
             con.createQuery(sql)
@@ -63,7 +63,6 @@ public class Sql2oResidenceDao implements ResidenceDao {
                     .addParameter("foodiate", foodiate)
                     .addParameter("description", description)
                     .addParameter("residenceaddress", residenceaddress)
-                    .addParameter("locationid", locationid)
                     .addParameter("id", id)
                     .executeUpdate();
         } catch (Sql2oException ex) {

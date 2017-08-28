@@ -2,7 +2,7 @@ SET MODE PostgreSQL;
 
 CREATE TABLE IF NOT EXISTS languages (
  id int PRIMARY KEY auto_increment,
- languagename VARCHAR,
+ languagename VARCHAR
 );
 
 CREATE TABLE IF NOT EXISTS phrases (
@@ -24,18 +24,18 @@ CREATE TABLE IF NOT EXISTS words (
 CREATE TABLE IF NOT EXISTS locations(
  id int PRIMARY KEY auto_increment,
  city VARCHAR,
- region VARCHAR,
+ region VARCHAR
 );
 
 CREATE TABLE IF NOT EXISTS residences(
  id int PRIMARY KEY auto_increment,
+ city VARCHAR,
+ region VARCHAR,
  residenceowner VARCHAR,
  foodiate VARCHAR,
  description VARCHAR,
- residenceaddress VARCHAR,
- locationid INTEGER
+ residenceaddress VARCHAR
 );
-
 
 --CREATE TABLE IF NOT EXISTS restaurants (
 -- id int PRIMARY KEY auto_increment,

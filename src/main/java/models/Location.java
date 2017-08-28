@@ -9,7 +9,6 @@ public class Location {
     public Location(String city, String region) {
         this.city = city;
         this.region = region;
-        this.id = id;
     }
 
     public String getCity() {

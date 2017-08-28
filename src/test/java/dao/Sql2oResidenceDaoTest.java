@@ -82,7 +82,7 @@ public class Sql2oResidenceDaoTest {
         Residence residence = setUpResidence();
         residenceDao.add(residence);
         assertEquals("Istanbul", residenceDao.findById(1).getCity());
-        residenceDao.update(1, "Dolly", "kebabs", "great kababs", "1234 Easy Street", 1);
+        residenceDao.update(1, "Dolly", "kebabs", "great kababs", "1234 Easy Street");
         assertEquals("Dolly", residenceDao.findById(1).getResidenceOwner());
     }
 

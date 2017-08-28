@@ -2,42 +2,43 @@ package models;
 
 public class Residence extends Location {
 
-    private String residenceOwner;
-    private String foodIAte;
+    private String residenceowner;
+    private String foodiate;
     private String description;
-    private String residenceAddress;
-    private String locationId;
+    private String residenceaddress;
+    private int locationId;
 
-    public Residence(String city, String region, String residenceOwner, String foodIAte, String description, String residenceAddress) {
+    public Residence(String city, String region, String residenceowner, String foodiate, String description, String residenceAddress) {
         super(city, region);
-        this.residenceOwner = residenceOwner;
-        this.foodIAte = foodIAte;
+        this.residenceowner = residenceowner;
+        this.foodiate = foodiate;
         this.description = description;
-        this.residenceAddress = residenceAddress;
+        this.residenceaddress = residenceAddress;
     }
 
-    public String getLocationId() {
+    public int getLocationId() {
         return locationId;
     }
 
-    public void setLocationId(String locationId) {
+    public void setLocationId(int locationId) {
         this.locationId = locationId;
     }
 
+
     public String getResidenceOwner() {
-        return residenceOwner;
+        return residenceowner;
     }
 
     public void setResidenceOwner(String residenceOwner) {
-        this.residenceOwner = residenceOwner;
+        this.residenceowner = residenceOwner;
     }
 
     public String getFoodIAte() {
-        return foodIAte;
+        return foodiate;
     }
 
     public void setFoodIAte(String foodIAte) {
-        this.foodIAte = foodIAte;
+        this.foodiate = foodIAte;
     }
 
     public String getDescription() {
@@ -49,11 +50,27 @@ public class Residence extends Location {
     }
 
     public String getResidenceAddress() {
-        return residenceAddress;
+        return residenceaddress;
     }
 
     public void setResidenceAddress(String residenceAddress) {
-        this.residenceAddress = residenceAddress;
+        this.residenceaddress = residenceAddress;
+    }
+
+    public String getResidenceowner() {
+        return residenceowner;
+    }
+
+    public void setResidenceowner(String residenceowner) {
+        this.residenceowner = residenceowner;
+    }
+
+    public String getFoodiate() {
+        return foodiate;
+    }
+
+    public void setFoodiate(String foodiate) {
+        this.foodiate = foodiate;
     }
 
     @Override
@@ -64,16 +81,16 @@ public class Residence extends Location {
 
         Residence residence = (Residence) o;
 
-        if (!residenceOwner.equals(residence.residenceOwner)) return false;
-        if (!foodIAte.equals(residence.foodIAte)) return false;
+        if (!residenceowner.equals(residence.residenceowner)) return false;
+        if (!foodiate.equals(residence.foodiate)) return false;
         return description.equals(residence.description);
     }
 
     @Override
     public int hashCode() {
         int result = super.hashCode();
-        result = 31 * result + residenceOwner.hashCode();
-        result = 31 * result + foodIAte.hashCode();
+        result = 31 * result + residenceowner.hashCode();
+        result = 31 * result + foodiate.hashCode();
         result = 31 * result + description.hashCode();
         return result;
     }

@@ -18,7 +18,7 @@ public interface ResidenceDao {
 
 
     //update
-    void update(int id, String residenceOwner, String foodIAte, String description, String residenceAddress, int locationId);
+    void update(int id, String residenceOwner, String foodIAte, String description, String residenceAddress);
 
     //delete
     void deleteById(int id); //see above
