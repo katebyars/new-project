@@ -29,7 +29,7 @@ public class Sql2oLocationDaoTest {
 
     //helper
     public Location setUpLocation () {
-        return new Location ("Ephesus", "Western Turkey", "Turkey", "1234 Main Street Ephesus, Turkey") ;
+        return new Location ("Ephesus","Western Turkey") ;
 
     }
 
@@ -67,19 +67,19 @@ public class Sql2oLocationDaoTest {
     @Test
     public void getLocationByID_Location() {
         Location location = setUpLocation();
-        Location location1 = new Location("Hello", "Dolly", "I'm so glad to meet you", "Bye");
+        Location location1 = new Location("Hello", "Dolly");
         locationDao.add(location);
         locationDao.add(location1);
-        assertEquals("Hello", locationDao.findById(2).getName());
+        assertEquals("Hello", locationDao.findById(2).getCity());
     }
 
     @Test
     public void updateChangesName() {
         Location location = setUpLocation();
         locationDao.add(location);
-        assertEquals("Ephesus", locationDao.findById(1).getName());
-        locationDao.update(1, "Dionysus", "Sirince", "Western Turkey", "1234 Easy Street");
-        assertEquals("Dionysus", locationDao.findById(1).getName());
+        assertEquals("Ephesus", locationDao.findById(1).getCity());
+        locationDao.update(1, "Dionysus", "Turkey");
+        assertEquals("Dionysus", locationDao.findById(1).getCity());
     }
 
     @Test

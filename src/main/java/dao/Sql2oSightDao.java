@@ -1,4 +1,4 @@
-package dao;
-
-public class Sql2oSightDao implements SightDao {
-}
+//package dao;
+//
+//public class Sql2oSightDao implements SightDao {
+//}

@@ -16,7 +16,7 @@ public class Sql2oLocationDao implements LocationDao {
 
     @Override
     public void add(Location location) {
-        String sql = "INSERT INTO locations (name, city, region, address) VALUES (:name, :city, :region, :address)";
+        String sql = "INSERT INTO locations (city, region) VALUES (:city, :region)";
         try(Connection con = sql2o.open()){
             int id = (int) con.createQuery(sql)
                     .bind(location)
@@ -49,14 +49,12 @@ public class Sql2oLocationDao implements LocationDao {
     }
 
     @Override
-    public void update(int id, String name, String city, String region, String address){
-        String sql = "UPDATE locations SET name = :name, city = :city, region = :region, address = :address WHERE id=:id";
+    public void update(int id, String city, String region){
+        String sql = "UPDATE locations SET city = :city, region = :region WHERE id=:id";
         try(Connection con = sql2o.open()){
             con.createQuery(sql)
-                    .addParameter("name", name)
                     .addParameter("city", city)
                     .addParameter("region", region)
-                    .addParameter("address", address)
                     .addParameter("id", id)
                     .executeUpdate();
         } catch (Sql2oException ex) {

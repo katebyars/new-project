@@ -1,4 +1,4 @@
-package dao;
-
-public class Sql2oRestaurantDao implements RestaurantDao {
-}
+//package dao;
+//
+//public class Sql2oRestaurantDao implements RestaurantDao {
+//}

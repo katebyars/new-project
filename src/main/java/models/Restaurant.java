@@ -8,8 +8,8 @@ public class Restaurant extends Location {
     private String description;
     private int locationId;
 
-    public Restaurant(String name, String city, String region, String restaurantName, String foodIAte, String restaurantAddress, String description) {
-        super(name, city, region);
+    public Restaurant(String city, String region, String restaurantName, String foodIAte, String restaurantAddress, String description) {
+        super(city, region);
         this.restaurantName = restaurantName;
         this.foodIAte = foodIAte;
         this.restaurantAddress = restaurantAddress;

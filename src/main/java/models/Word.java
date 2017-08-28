@@ -6,8 +6,8 @@ public class Word extends Language {
     private String definition;
     private int languageId;
 
-    public Word(String name, int id, String word, String definition) {
-        super(name);
+    public Word(String languageName, String word, String definition) {
+        super(languageName);
         this.word = word;
         this.definition = definition;
         this.languageId = languageId;

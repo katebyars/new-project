@@ -17,7 +17,7 @@ public class Sql2oResidenceDao implements ResidenceDao {
 
     @Override
     public void add(Residence residence) {
-        String sql = "INSERT INTO residences (name, city, region, address, owner, foodiate, description) VALUES (:name, :city, :region, :address, :owner, :foodiate, :description)";
+        String sql = "INSERT INTO residences (residenceowner, foodiate, description, residenceaddress, description, locationid) VALUES (:residenceowner, :foodiate, :description, :residenceaddress, :description, :locationid)";
         try(Connection con = sql2o.open()){
             int id = (int) con.createQuery(sql)
                     .bind(residence)

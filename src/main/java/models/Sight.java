@@ -8,8 +8,8 @@ public class Sight extends Location {
     private int locationId;
 
 
-    public Sight(String name, String city, String region, String siteName, String siteAddress, String siteDescription) {
-        super(name, city, region);
+    public Sight(String city, String region, String siteName, String siteAddress, String siteDescription) {
+        super(city, region);
         this.siteName = siteName;
         this.siteAddress = siteAddress;
         this.siteDescription = siteDescription;

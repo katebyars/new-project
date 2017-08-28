@@ -11,7 +11,7 @@ public interface LocationDao {
     Location findById(int id);
 
     //update
-    void update(int id, String name, String ciyt, String region, String address);
+    void update(int id, String city, String region);
 
     //delete
     void deleteById(int id);
