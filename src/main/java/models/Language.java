@@ -6,14 +6,15 @@ public class Language {
     private int id;
 
     public Language(String languageName) {
+
         this.languageName = languageName;
     }
 
-    public String getName() {
+    public String getLanguageName() {
         return languageName;
     }
 
-    public void setName(String name) {
+    public void setLanguageName(String languageName) {
         this.languageName = languageName;
     }
 

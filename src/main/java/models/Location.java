@@ -12,13 +12,12 @@ public class Location {
         this.id = id;
     }
 
-
     public String getCity() {
         return city;
     }
 
     public void setCity(String city) {
-        city = city;
+        this.city = city;
     }
 
     public String getRegion() {
@@ -26,7 +25,7 @@ public class Location {
     }
 
     public void setRegion(String region) {
-        region = region;
+        this.region = region;
     }
 
     public int getId() {

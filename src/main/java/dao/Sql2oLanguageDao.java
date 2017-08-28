@@ -15,7 +15,7 @@ public class Sql2oLanguageDao implements LanguageDao {
 
     @Override
     public void add(Language language) {
-        String sql = "INSERT INTO languages (name) VALUES (:name)";
+        String sql = "INSERT INTO languages (languagename) VALUES (:languagename)";
         try(Connection con = sql2o.open()){
             int id = (int) con.createQuery(sql)
                     .bind(language)

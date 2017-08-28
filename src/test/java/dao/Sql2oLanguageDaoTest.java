@@ -40,7 +40,9 @@ public class Sql2oLanguageDaoTest {
     }
 
     @Test
-    public void addLanguageSetsId() throws Exception {               Language testLanguage = setUpLanguage();                      languageDao.add(testLanguage);
+    public void addLanguageSetsId() throws Exception {
+        Language testLanguage = setUpLanguage();
+        languageDao.add(testLanguage);
         int idOfTest = testLanguage.getId();
         assertEquals(1, idOfTest);
     }
@@ -62,16 +64,16 @@ public class Sql2oLanguageDaoTest {
         Language language1 = new Language("Sicilian");
         languageDao.add(language);
         languageDao.add(language1);
-        assertEquals("Sicilian", languageDao.findById(2).getName());
+        assertEquals("Turkish", languageDao.findById(1).getLanguageName());
     }
 
     @Test
     public void updateChangesName() {
         Language language = setUpLanguage();
         languageDao.add(language);
-        assertEquals("Turkish", languageDao.findById(1).getName());
+        assertEquals("Turkish", languageDao.findById(1).getLanguageName());
         languageDao.update(1, "Italian");
-        assertEquals("Italian", languageDao.findById(1).getName());
+        assertEquals("Italian", languageDao.findById(1).getLanguageName());
     }
 
     @Test

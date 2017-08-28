@@ -40,7 +40,7 @@ public class Sql2oLocationDaoTest {
     }
 
     @Test
-    public void locationAddsToDAo_True() throws Exception {
+    public void locationAddsToDao_True() throws Exception {
         Location locationTest= setUpLocation();
         locationDao.add(locationTest);
         assertEquals(1, locationDao.getAll().size());
