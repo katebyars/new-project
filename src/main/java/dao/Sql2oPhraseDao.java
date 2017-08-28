@@ -62,13 +62,13 @@ public class Sql2oPhraseDao implements PhraseDao {
     }
 
     @Override
-    public void update(String name, String phrase, String definition, int id){
-        String sql = "UPDATE phrases SET name = :name, phrase = :phrase, definition = :definition WHERE id = :id";
+    public void update(int id, String phrase, String definition, int languageid){
+        String sql = "UPDATE phrases SET phrase = :phrase, definition = :definition, languageid = :languageid WHERE id = :id";
         try(Connection con = sql2o.open()){
             con.createQuery(sql)
-                    .addParameter("name", name)
                     .addParameter("phrase", phrase)
                     .addParameter("definition", definition)
+                    .addParameter("languageid", languageid)
                     .addParameter("id", id)
                     .executeUpdate();
         } catch (Sql2oException ex) {

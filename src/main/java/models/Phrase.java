@@ -9,6 +9,7 @@ public class Phrase extends Language {
         super(languagename);
         this.phrase = phrase;
         this.definition = definition;
+        this.languageid = languageid;
     }
 
     public String getPhrase() {

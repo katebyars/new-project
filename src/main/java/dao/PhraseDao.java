@@ -18,7 +18,7 @@ public interface PhraseDao {
 
 
     //update
-    void update(String name, String phrase, String definition, int id);
+    void update(int id, String phrase, String definition, int languageid);
 
     //delete
     void deleteById(int id); //see above

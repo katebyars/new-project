@@ -70,16 +70,16 @@ public class Sql2oPhraseDaoTest {
         Phrase phrase1 = new Phrase("Italian", "Sono stanca", "I am tired.");
         phraseDao.add(phrase);
         phraseDao.add(phrase1);
-        assertEquals("Italian", phraseDao.findById(2).getlanguagename());
+        assertEquals("I am tired.", phraseDao.findById(2).getDefinition());
     }
 
     @Test
-    public void updateChangesName() {
+    public void updateChangesProperties() {
         Phrase phrase = setUpAPhrase();
         phraseDao.add(phrase);
-        assertEquals("Turkish", phraseDao.findById(1).getlanguagename());
-        phraseDao.update("Italian", "Ho freddo", "I am cold.", 1);
-        assertEquals("Italian", phraseDao.findById(1).getlanguagename());
+        assertEquals("Gurusuruz", phraseDao.findById(1).getPhrase());
+        phraseDao.update(1,"Ho freddo", "I am cold", 1);
+        assertEquals("Ho freddo", phraseDao.findById(1).getPhrase());
     }
 
     @Test
