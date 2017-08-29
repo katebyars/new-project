@@ -1,7 +1,5 @@
 import com.google.gson.Gson;
-import dao.Sql2oWordDao;
-import dao.Sql2oLanguageDao;
-import dao.Sql2oPhraseDao;
+import dao.*;
 import exceptions.ApiException;
 import models.Word;
 import models.Language;
@@ -20,6 +18,8 @@ public class App {
         Sql2oPhraseDao phraseDao;
         Sql2oLanguageDao languageDao;
         Sql2oWordDao wordDao;
+        Sql2oLocationDao locationDao;
+        Sql2oResidenceDao residenceDao;
         Connection conn;
         Gson gson = new Gson();
 
@@ -28,8 +28,9 @@ public class App {
         wordDao = new Sql2oWordDao(sql2o);
         phraseDao = new Sql2oPhraseDao(sql2o);
         languageDao = new Sql2oLanguageDao(sql2o);
+        locationDao = new Sql2oLocationDao(sql2o);
+        residenceDao = new Sql2oResidenceDao(sql2o);
         conn = sql2o.open();
-
 
         //CREATE
 
@@ -60,7 +61,6 @@ public class App {
             res.status(201);;
             return gson.toJson(language);
         });
-
 
 
         //READ
