@@ -27,32 +27,32 @@ This App is for the student traveling abroad. Although electronic translators an
 This project has been testes in Postman. Here are examples of some functionalities:
 
 Create a new word:
-![alt text](http://github.com/katebyars/new-project/master/src/main/resources/public.images/postnewword.png)
+![alt text](http://github.com/katebyars/new-project/blob/master/src/main/resources/public.images/postnewword.png)
 
 Create a new language:
-![alt text](http://github.com/katebyars/new-project/master/src/main/resources/public.images/postnewlanguage.png)
+![alt text](http://github.com/katebyars/new-project/blob/master/src/main/resources/public.images/postnewlanguage.png)
 
 Create a new phrase:
-![alt text](new-project/src/main/resources/public/images/addNewPhrase.png)
+![alt text](http://github.com/katebyars/new-project/blob/master/src/main/resources/public.images/addNewPhrase.png)
 
 Get all languages:
-![alt text](http://github.com/katebyars/new-project/master/src/main/resources/public.images/public.images/getAllLanguages.png)
+![alt text](http://github.com/katebyars/new-project/blob/master/src/main/resources/public.images/public.images/getAllLanguages.png)
 
 Get all words:
-![alt text](http://github.com/katebyars/new-project/master/src/main/resources/public.images/public.images/getAllWords.png)
+![alt text](http://github.com/katebyars/new-project/blob/master/src/main/resources/public.images/public.images/getAllWords.png)
 
 Get all phrases:
-![alt text](http://github.com/katebyars/new-project/master/src/main/resources/public.images/public.images/getAllPhrases.png)
+![alt text](http://github.com/katebyars/new-project/blob/master/src/main/resources/public.images/public.images/getAllPhrases.png)
 
 Get languages by id:
-![alt text](http://github.com/katebyars/new-project/master/src/main/resources/public.images/public.images/getLanguagesById.png)
+![alt text](http://github.com/katebyars/new-project/blob/master/src/main/resources/public.images/public.images/getLanguagesById.png)
 
 Get words by id:
-![alt text](http://github.com/katebyars/new-project/master/src/main/resources/public.images/public.images/getWordsById.png)
+![alt text](http://github.com/katebyars/new-project/blob/master/src/main/resources/public.images/public.images/getWordsById.png)
 
 
 Get phrases by id:
-![alt text](http://github.com/katebyars/new-project/master/src/main/resources/public.images/public.images/getPhrasesById.png)
+![alt text](http://github.com/katebyars/new-project/blob/master/src/main/resources/public.images/public.images/getPhrasesById.png)
 
 
 ## Technologies Used
