@@ -36,7 +36,7 @@ Create a new phrase:
 ![alt text](https://github.com/katebyars/new-project/blob/master/src/main/resources/public/images/postnewphrase.png)
 
 Get all languages:
-![alt text](http://github.com/katebyars/new-project/blob/master/src/main/resources/public.images/public.images/getAllLanguages.png)
+![alt text](https://github.com/katebyars/new-project/blob/master/src/main/resources/public/images/getAllLanguages.png)
 
 Get all words:
 ![alt text](https://github.com/katebyars/new-project/blob/master/src/main/resources/public/images/getAllWords.png)
