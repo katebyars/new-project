@@ -1,4 +1,4 @@
-# Study Abroad Language App: Document Your Language Learning Abroad App
+# Study Abroad Language App: Document Your Learning Abroad
 
 #### Java project for Epicodus, August 2017
 
@@ -24,36 +24,34 @@ This App is for the student traveling abroad. Although electronic translators an
 |See all the languages in the app|"All languages"|List of all the languages|
 
 ## Postman
-This project has been testes in Postman. Here are examples of some functionalities:
+This project has been tested in Postman. Here are examples of some functionalities:
 
 Create a new word:
-![alt text](http://github.com/katebyars/new-project/blob/master/src/main/resources/public.images/postnewword.png)
+![alt text](https://github.com/katebyars/new-project/blob/master/src/main/resources/public/images/postnewword.png)
 
 Create a new language:
-![alt text](http://github.com/katebyars/new-project/blob/master/src/main/resources/public.images/postnewlanguage.png)
+![alt text](https://github.com/katebyars/new-project/blob/master/src/main/resources/public/images/postnewlanguage.png)
 
 Create a new phrase:
-![alt text](http://github.com/katebyars/new-project/blob/master/src/main/resources/public.images/addNewPhrase.png)
+![alt text](https://github.com/katebyars/new-project/blob/master/src/main/resources/public/images/postnewphrase.png)
 
 Get all languages:
 ![alt text](http://github.com/katebyars/new-project/blob/master/src/main/resources/public.images/public.images/getAllLanguages.png)
 
 Get all words:
-![alt text](http://github.com/katebyars/new-project/blob/master/src/main/resources/public.images/public.images/getAllWords.png)
+![alt text](https://github.com/katebyars/new-project/blob/master/src/main/resources/public/images/getAllWords.png)
 
 Get all phrases:
-![alt text](http://github.com/katebyars/new-project/blob/master/src/main/resources/public.images/public.images/getAllPhrases.png)
+![alt text](https://github.com/katebyars/new-project/blob/master/src/main/resources/public/images/getAllPhrases.png)
 
 Get languages by id:
-![alt text](http://github.com/katebyars/new-project/blob/master/src/main/resources/public.images/public.images/getLanguagesById.png)
+![alt text](https://github.com/katebyars/new-project/blob/master/src/main/resources/public/images/getLanguagesById.png)
 
 Get words by id:
-![alt text](http://github.com/katebyars/new-project/blob/master/src/main/resources/public.images/public.images/getWordsById.png)
-
+![alt text](https://github.com/katebyars/new-project/blob/master/src/main/resources/public/images/getWordsById.png)
 
 Get phrases by id:
-![alt text](http://github.com/katebyars/new-project/blob/master/src/main/resources/public.images/public.images/getPhrasesById.png)
-
+![alt text](https://github.com/katebyars/new-project/blob/master/src/main/resources/public/images/getPhrasesById.png)
 
 ## Technologies Used
 
@@ -70,6 +68,9 @@ This project is under construction. It will add the following features in the fu
 |Students can look up a list of words or phrases based on where they learned it|"Gina's House"|"Straciatella, gemelli, cucchiaio"|
 |Students can upload photos to words, phrases or locations|Pasta photo| Pasta photo and "Gemelli:"Twin" shaped pasta|
 |Professors can pre-load images, words and phrases into the App prior to or during the student's trip|"Studiolo di Federico da Montefeltro" |"Frederick of Mentefeltro's Study" and photo of the study|
+
+You can easily see the present and future database relationships here:
+![alt text](https://github.com/katebyars/new-project/blob/master/src/main/resources/public/images/schema.png)
 
 
 ### License
