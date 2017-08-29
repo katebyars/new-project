@@ -9,7 +9,8 @@
 
 ## Setup/Installation Requirements
 
-* Open in any browser
+* Download and open Postman
+* Use the Postman file in this project to test the various paths in App
 
 ## Specifications
 
@@ -18,13 +19,16 @@
 **Later... associate a location with words and phrases
 ## Images
 
- ![Schema Design](https://github.com/katebyars/new-project/blob/master/src/main/resources/public/images/.png)
 ## Technologies Used
 
 Java, Spark, SQL, JSON, GSON, Postman, IntelliJ with Handlebars plugin
+
+
+Postman Example:
+![alt text](../images/newlanguage.png)
 
 ### License
 
 Licensed under GPL
 
-Copyright &copy; 2017 Esti Shay
+Copyright &copy; 2017 Kate Byars

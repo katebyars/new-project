@@ -45,10 +45,10 @@ public class App {
         });
 
         //a new phrase
-        post("/languages/:languageId/phrases/new", "application/json", (req, res) -> {
-            int languageId = Integer.parseInt(req.params("languageId"));
+        post("/languages/:languageid/phrases/new", "application/json", (req, res) -> {
+            int languageid = Integer.parseInt(req.params("languageid"));
             Phrase phrase = gson.fromJson(req.body(), Phrase.class);
-            phrase.setLanguageid(languageId);
+            phrase.setLanguageid(languageid);
             phraseDao.add(phrase);
             res.status(201);
             return gson.toJson(phrase);
@@ -64,14 +64,17 @@ public class App {
 
 
         //READ
+
+        //all languages
         get("/languages", "application/json", (req, res) -> {
             return gson.toJson(languageDao.getAll());
         });
 
+        //languages by id
         get("/languages/:id", "application/json", (req, res) -> {
-            int restaurantId = Integer.parseInt(req.params("id"));
+            int languageId = Integer.parseInt(req.params("id"));
 
-            Language languageToFind = languageDao.findById(restaurantId);
+            Language languageToFind = languageDao.findById(languageId);
 
             if (languageToFind == null){
                 throw new ApiException(404, String.format("No langyage with the id: \"%s\" exists", req.params("id")));
@@ -80,22 +83,46 @@ public class App {
             return gson.toJson(languageToFind);
         });
 
+        //all words
         get("/words", "application/json", (req, res) -> {
-            int languageId = Integer.parseInt(req.params("id"));
-
-            List<Word> allWords = wordDao.getAll();
-            return gson.toJson(allWords);
+            return gson.toJson(wordDao.getAll());
         });
 
+        //words by id
+        get("/words/:id", "application/json", (req, res) -> {
+            int wordId = Integer.parseInt(req.params("id"));
+
+            Word wordToFind = wordDao.findById(wordId);
+
+            if (wordToFind == null){
+                throw new ApiException(404, String.format("No langyage with the id: \"%s\" exists", req.params("id")));
+            }
+
+            return gson.toJson(wordToFind);
+        });
+
+        //all phrases
         get("/phrases", "application/json", (req, res) -> {
-            int languageId = Integer.parseInt(req.params("id"));
+            return gson.toJson(phraseDao.getAll());
 
-            List<Phrase> allPhrases = phraseDao.getAll();
-            return gson.toJson(allPhrases);
         });
 
-        //read all phrases by Language ID
-        //read all words by language ID
+        get("/phrases/:id", "application/json", (req, res) -> {
+            int phraseId = Integer.parseInt(req.params("id"));
+
+            Word phraseToFind = wordDao.findById(phraseId);
+
+            if (phraseToFind == null){
+                throw new ApiException(404, String.format("No langyage with the id: \"%s\" exists", req.params("id")));
+            }
+
+            return gson.toJson(phraseToFind);
+        });
+
+        //To Do
+        //get all phrases by Language ID
+        //get all words by Language ID
+        //get all phrases by a word
 
 
         //FILTERS
